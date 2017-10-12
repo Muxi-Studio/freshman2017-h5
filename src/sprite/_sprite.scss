@@ -9,33 +9,22 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$pic-test-name: 'pic_test';
-$pic-test-x: 0px;
-$pic-test-y: 0px;
-$pic-test-offset-x: 0px;
-$pic-test-offset-y: 0px;
-$pic-test-width: 300px;
-$pic-test-height: 300px;
-$pic-test-total-width: 300px;
-$pic-test-total-height: 600px;
-$pic-test-image: '../sprite/sprite.png';
-$pic-test: (0px, 0px, 0px, 0px, 300px, 300px, 300px, 600px, '../sprite/sprite.png', 'pic_test', );
-$pic-name: 'pic';
-$pic-x: 0px;
-$pic-y: 300px;
-$pic-offset-x: 0px;
-$pic-offset-y: -300px;
-$pic-width: 300px;
-$pic-height: 300px;
-$pic-total-width: 300px;
-$pic-total-height: 600px;
-$pic-image: '../sprite/sprite.png';
-$pic: (0px, 300px, 0px, -300px, 300px, 300px, 300px, 600px, '../sprite/sprite.png', 'pic', );
-$spritesheet-width: 300px;
-$spritesheet-height: 600px;
-$spritesheet-image: '../sprite/sprite.png';
-$spritesheet-sprites: ($pic-test, $pic, );
-$spritesheet: (300px, 600px, '../sprite/sprite.png', $spritesheet-sprites, );
+$background-all-name: 'background_all';
+$background-all-x: 0px;
+$background-all-y: 0px;
+$background-all-offset-x: 0px;
+$background-all-offset-y: 0px;
+$background-all-width: 750px;
+$background-all-height: 1334px;
+$background-all-total-width: 750px;
+$background-all-total-height: 1334px;
+$background-all-image: '../sprite/sprite.jpg';
+$background-all: (0px, 0px, 0px, 0px, 750px, 1334px, 750px, 1334px, '../sprite/sprite.jpg', 'background_all', );
+$spritesheet-width: 750px;
+$spritesheet-height: 1334px;
+$spritesheet-image: '../sprite/sprite.jpg';
+$spritesheet-sprites: ($background-all, );
+$spritesheet: (750px, 1334px, '../sprite/sprite.jpg', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

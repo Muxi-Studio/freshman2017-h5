@@ -7,9 +7,9 @@
 			"async": false
 		},
 		{
-			"name": "new",
-			"endpoint": "/new",
-			"template": "index",
+			"name": "animation",
+			"endpoint": "/test-animation",
+			"template": "test-animation",
 			"async": false
 		},
 		{

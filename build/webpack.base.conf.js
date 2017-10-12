@@ -16,6 +16,7 @@ function resolve(dir) {
 module.exports = {
         entry: {
             index: './src/index.js',
+            // animation:'./src/animation.js'
         },
         output: {
             path: path.join(__dirname, "../"),
@@ -55,14 +56,14 @@ module.exports = {
         new SpritesmithPlugin({
             src: {
                 cwd: './src/assets/',
-                glob: '*.png'
+                glob: '*.jpg'
             },
             target: {
-                image: './src/sprite/sprite.png',
+                image: './src/sprite/sprite.jpg',
                 css: './src/sprite/_sprite.scss'
             },
             apiOptions: {
-                cssImageRef: '../sprite/sprite.png'
+                cssImageRef: '../sprite/sprite.jpg'
             },
             spritesmithOptions: {
                 algorithm: 'top-down'
@@ -107,6 +108,12 @@ module.exports = {
             template: path.join(__dirname, '../template/index.ejs'),
             chunks: ['index']
         }),
-        new HtmlWebpackHarddiskPlugin()
+        // new HtmlWebpackPlugin({
+        //     alwaysWriteToDisk: true,
+        //     filename: 'template/animation.html',
+        //     inject: false,
+        //     template: path.join(__dirname, '../template/animation.ejs'),
+        //     chunks: ['animation']
+        // })
     ]
 }
