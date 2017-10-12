@@ -75,9 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
-
 .question-page{
-  
     width: 100%;
     min-height: 100%;
     background-attachment: fixed;
@@ -85,7 +83,7 @@ export default {
     background-position: center center;
     background-size: cover;
     background-image: url('../sprite/sprite.jpg');
-     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
+    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .question_word1{
   opacity: 0;

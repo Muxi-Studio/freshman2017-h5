@@ -1,6 +1,7 @@
 <template>
   <div class="app-all">
-    <question v-if="showPage==='question'"></question>
+    <loading></loading>
+    <!-- <question v-if="showPage==='question'"></question> -->
     <!-- <red v-if="showNum===0" @togreen="addgreen()"></red>
     <green v-if="showNum===1" @toblue="addblue()"></green>
     <blue v-if="showNum===2" @toword="addword()"></blue>
@@ -13,7 +14,7 @@
 import green from './green.vue'
 import red from './red.vue'
 import blue from './blue.vue'
-import playWord from './playWord'
+import loading from './loading.vue'
 import question from './question-page'
 
 export default {
@@ -26,7 +27,7 @@ export default {
      'red':red,
      'green':green,
      'blue':blue,
-     'play-word':playWord,
+     'loading':loading,
      'question':question
     },
     methods: {
