@@ -37,7 +37,7 @@ export default {
           speed:100,
           index:0,
           text_pos:0,
-          baseText:',你好先锋军,在这里直接输入你的脑电波,如何称为一个帅气的产品经理,如何称为大佬,如何一起来实现APP',
+          baseText:',你好先锋军,在这里直接输入你的脑电波,如何成为一个帅气的产品经理,如何称为大佬,如何一起来实现APP',
           text:''  
       }
     },
@@ -77,6 +77,7 @@ export default {
 <style lang="scss">
 
 .question-page{
+  
     width: 100%;
     min-height: 100%;
     background-attachment: fixed;
@@ -84,6 +85,7 @@ export default {
     background-position: center center;
     background-size: cover;
     background-image: url('../sprite/sprite.jpg');
+     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .question_word1{
   opacity: 0;
@@ -102,7 +104,7 @@ export default {
   text-align: center;
   margin: 0;
   margin-bottom: .5em;
-  font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
+  
   font-weight: bold;
   padding-top: 2.4em;
 }
@@ -119,7 +121,6 @@ export default {
   font-weight: bold;
   margin: 0;
   font-size:15pt;
-  font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
   
 }
 .question_word3{
@@ -134,7 +135,7 @@ export default {
   text-align: center;
   font-weight: bold;
   margin: 0;
-  font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
+ 
   margin-top: 1.2em;
   font-weight: bold;
   font-size: 20pt;
