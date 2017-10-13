@@ -72,7 +72,7 @@ module.exports = {
         new SpritesmithPlugin({
             src: {
                 cwd: './src/assets/asserts/',
-                glob: '*.jpg'
+                glob: '*.png'
             },
             target: {
                 image: './src/sprite/sprite_inners.jpg',

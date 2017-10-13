@@ -14,39 +14,39 @@ $only-sun-x: 0px;
 $only-sun-y: 0px;
 $only-sun-offset-x: 0px;
 $only-sun-offset-y: 0px;
-$only-sun-width: 140px;
-$only-sun-height: 140px;
+$only-sun-width: 170px;
+$only-sun-height: 170px;
 $only-sun-total-width: 454px;
-$only-sun-total-height: 764px;
+$only-sun-total-height: 794px;
 $only-sun-image: '../sprite/sprite_inners.jpg';
-$only-sun: (0px, 0px, 0px, 0px, 140px, 140px, 454px, 764px, '../sprite/sprite_inners.jpg', 'onlySun', );
+$only-sun: (0px, 0px, 0px, 0px, 170px, 170px, 454px, 794px, '../sprite/sprite_inners.jpg', 'onlySun', );
 $sun-name: 'sun';
 $sun-x: 0px;
-$sun-y: 140px;
+$sun-y: 170px;
 $sun-offset-x: 0px;
-$sun-offset-y: -140px;
+$sun-offset-y: -170px;
 $sun-width: 170px;
 $sun-height: 170px;
 $sun-total-width: 454px;
-$sun-total-height: 764px;
+$sun-total-height: 794px;
 $sun-image: '../sprite/sprite_inners.jpg';
-$sun: (0px, 140px, 0px, -140px, 170px, 170px, 454px, 764px, '../sprite/sprite_inners.jpg', 'sun', );
+$sun: (0px, 170px, 0px, -170px, 170px, 170px, 454px, 794px, '../sprite/sprite_inners.jpg', 'sun', );
 $shouye-name: 'shouye';
 $shouye-x: 0px;
-$shouye-y: 310px;
+$shouye-y: 340px;
 $shouye-offset-x: 0px;
-$shouye-offset-y: -310px;
+$shouye-offset-y: -340px;
 $shouye-width: 454px;
 $shouye-height: 454px;
 $shouye-total-width: 454px;
-$shouye-total-height: 764px;
+$shouye-total-height: 794px;
 $shouye-image: '../sprite/sprite_inners.jpg';
-$shouye: (0px, 310px, 0px, -310px, 454px, 454px, 454px, 764px, '../sprite/sprite_inners.jpg', 'shouye', );
+$shouye: (0px, 340px, 0px, -340px, 454px, 454px, 454px, 794px, '../sprite/sprite_inners.jpg', 'shouye', );
 $spritesheet-width: 454px;
-$spritesheet-height: 764px;
+$spritesheet-height: 794px;
 $spritesheet-image: '../sprite/sprite_inners.jpg';
 $spritesheet-sprites: ($only-sun, $sun, $shouye, );
-$spritesheet: (454px, 764px, '../sprite/sprite_inners.jpg', $spritesheet-sprites, );
+$spritesheet: (454px, 794px, '../sprite/sprite_inners.jpg', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -73,17 +73,22 @@ $spritesheet: (454px, 764px, '../sprite/sprite_inners.jpg', $spritesheet-sprites
 // // HTML
 // <i class="icon icon-home"></i>
 @mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
+  width: 90%;
 }
 
 @mixin sprite-height($sprite) {
-  height: nth($sprite, 6);
+  height:90%;
 }
 
-@mixin sprite-position($sprite) {
-  $sprite-offset-x: nth($sprite, 3);
-  $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+@mixin sprite-size($sprite,$img_height) {
+    $sprite-total-height: nth($sprite, 8);
+    background-size: auto  ($sprite-total-height / $img_height) * 100%;
+    }
+@mixin sprite-position($sprite,$img_height) {
+    $sprite-total-height: nth($sprite, 8);
+    $sprite-total-width: nth($sprite, 7);
+    $sprite-y: nth($sprite, 2) / ($sprite-total-height - $img_height) * 100%;
+    background-position: 0  $sprite-y;
 }
 
 @mixin sprite-image($sprite) {
@@ -91,9 +96,10 @@ $spritesheet: (454px, 764px, '../sprite/sprite_inners.jpg', $spritesheet-sprites
   background-image: url(#{$sprite-image});
 }
 
-@mixin sprite($sprite) {
+@mixin sprite($sprite,$img_height) {
+  @include sprite-size($sprite,$img_height);
   @include sprite-image($sprite);
-  @include sprite-position($sprite);
+  @include sprite-position($sprite,$img_height);
   @include sprite-width($sprite);
   @include sprite-height($sprite);
 }

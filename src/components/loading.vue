@@ -1,10 +1,7 @@
 <template>
   <div class='loading'>
-
-       
-         <div class="loading_light">
-            <div class="loading_sun">
-           </div>
+      <div class="loading_sun_all">
+       <div class="loading_sun" :class="{'loading_only_sun':light}"></div>
        </div>
        <div class="loading_sprite" ></div>
        <div class='loading_wave'></div>
@@ -20,31 +17,42 @@
 export default {
     data(){
       return {
-
+          light:false
       }
     },
-     methods:{
-      
+    created:function(){
+        setInterval(()=>{
+            this.light=!this.light;
+        },500);
     }
     
   }
 </script>
 
-<style lang="sass">
- @import url('../sprite/_sprites_inners.scss');
- 
+<style lang="scss">
+ @import '../sprite/innerSprite.scss';
+ .loading_sun_all{
+     height: 170px;
+     margin-left: 60%;
+     padding-top: 20%;
+     margin-bottom: -10%;
+ }
+ .loading_sun{
+    @include sprite($sun,$sun-height);
+    background-repeat:no-repeat;
+    
+}
+.loading_only_sun{
+     @include sprite($only-sun,$only-sun-height);
+     background-repeat:no-repeat;
+}
  .loading_sprite{
-   
-    // @include sprite($img_1)
-    // height: 200px;
-    // width: auto;
-    // margin-top: 2rem;
-    // position: relative;
-    // left: 50%;
-    // transform:translate(-50%);
-    // margin-left: -50%;
-
-//     background-image: url('../sprite/sprite.jpg');
+    @include sprite($shouye,$shouye-height);
+    background-repeat:no-repeat;
+    position: relative;
+    left: 50%;
+    transform:translate(-45%);
+    height:300px;
 }
 .loading{
     width: 100%;
@@ -53,12 +61,11 @@ export default {
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
-     background-image:url('../sprite/sprite_inners.jpg'); 
+    background-image:url('../sprite/sprite.jpg'); 
     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .loading_wave{
     position: relative;
-    // top: 220px;
     left: 50%;
     margin-left: -5rem;
     animation: larg 2s ease forwards;
@@ -73,26 +80,9 @@ export default {
     background-repeat: repeat-x;
     background-image: linear-gradient(135deg,transparent 45%, #CC9900 55%,transparent 60%),linear-gradient(45deg,transparent 45%,#CC9900 55%,transparent 60%);
 }
-.loading_sun{
-    position: relative;
-    right: 0;
-    bottom: 0;
-    width: 60px;
-    line-height: 100px;
-    background-color: white;
-    border-radius: 100px 100px 0 0;
-    height: 30px;
-    z-index: 3;
-}
-.loading_light{
-    padding-top: 30%;
-    margin-left:70%;
-}
-
 .loading_button{
   display: inline-block;
   position: relative;
-//   top: 300px;
   left: 50%;
   transform:translate(-50%);
   margin-top: 1em;
