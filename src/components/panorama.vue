@@ -1,67 +1,143 @@
 <template>
-  <div class="wrap">
-  <div id="demo">
+  <div class="wrap"  @touchstart='Down($event)' @touchmove='Move($event)' @touchend='Up()'>
+    <div id="this">
+      <div id="loader"></div>
 
-    <div id="loader"></div>
-
-    <div id="panorama">
-      <div class="face f1"></div>
-      <div class="face f2"></div>
-      <div class="face f3">
-      </div>
-      <div class="face f4">
-        <div class="label" id="l1">
-          Public Library
-          <hr />
+      <div id="panorama">
+        <div class="face f1"></div>
+        <div class="face f2"></div>
+        <div class="face f3">
         </div>
-      </div>
-      <div class="face f5">
-        <div class="label" id="l2">
-          Hospital
-          <hr />
+        <div class="face f4">
+          <div class="label" id="l1">
+            Public Library
+            <hr />
+          </div>
         </div>
-      </div>
-      <div class="face f6">
-        <div class="label" id="l3">
-          Middle school
-          <hr />
+        <div class="face f5">
+          <div class="label" id="l2">
+            Hospital
+            <hr />
+          </div>
+        </div>
+        <div class="face f6">
+          <div class="label" id="l3">
+            Middle school
+            <hr />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-    data(){
-      return {
+  data() {
+    return {
+      loaded: 0,
+      drag: false,
+      speed: 0.5,
+      brake: 1,
+      r: 0,
+      x:0,
+      time:new Date(),
+      o:0,
+      p:'',
+      images: [
+        'http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg',
+        'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
+        'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
+        'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
+        'http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg',
+        'http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg'
+      ],
 
-      }
-    },
-     methods:{
-      addblue:function(){
-        this.$emit('toword');
-      }
-    },
-    created:function(){
-        window.requestAnimFrame = (function() {
-            return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            function(callback) {
-            window.setTimeout(callback, 1000 / 60);
-             };
-         })();
     }
-    
+  },
+  methods: {
+    // addblue: function() {
+    //   this.$emit('toword');
+    // },
+
+    Move: function(e) {
+      console.log('Move');
+      if (this.drag) {
+        this.r = this.x - e.clientX;
+        this.p.style.webkitTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+        this.p.style.mozTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+        this.p.style.transform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+      }
+    },
+    Down: function(e) {
+       console.log('Down');
+      this.o = this.r;
+      this.x = this.r + e.clientX;
+      this.drag = true;
+      this.time = new Date();
+    },
+    Up: function() {
+       console.log('Up');
+        if (this.drag) {
+          var time = new Date() - this.time;
+          var path = this.r - this.o;
+          this.speed = path / time * 5;
+          this.brake = 1.01;
+          this.drag = false;
+        }
+      }, 
+  },
+
+  created: function() {
+    window.requestAnimFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        function(callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+
+  },
+  mounted:function(){
+    this.$nextTick(()=>{
+        this.e = document.getElementById('this');
+        this.p = document.getElementById('panorama');
+        this.l = document.getElementById('loader');
+        for (var i = 0; i < this.images.length; i++) {
+          var img = new Image();
+           this.loaded++;
+           this.l.style.width = this.loaded / this.images.length * 100 + '%';
+            if (this.loaded === this.images.length) {
+          this.l.style.opacity = 0;
+          this.p.style.opacity = 1;
+        };
+          img.src = this.images[i];
+        }
+        let self=this;
+        let Spin= function() {
+         console.log('Spin');
+            if (!self.drag) {
+              self.r += self.speed;
+              self.speed /= self.brake;
+              self.p.style.webkitTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+              self.p.style.mozTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+              self.p.style.transform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+            }
+     };
+      window.requestAnimFrame(Spin);
+    })
   }
+}
 </script>
 
 <style lang="scss">
-html, body {
-  height: 100%; width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
+
 body {
   margin: 0;
   background: #E3E3E3;
@@ -73,11 +149,14 @@ body {
   padding: 10px;
   box-shadow: 0 0 3px #AAA;
   margin: 0 auto;
-  height: 400px; width: 400px;
+  height: 400px;
+  width: 400px;
   border-radius: 3px;
 }
-#demo {
-  height: 100%; width: 100%;
+
+#this {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative;
   -webkit-perspective: 300px;
@@ -87,63 +166,77 @@ body {
   -moz-user-select: none;
   user-select: none;
 }
+
 #loader {
   position: absolute;
-  left: 0; top: 198px;
+  left: 0;
+  top: 198px;
   height: 4px;
   background: #222;
   border-radius: 2px;
 }
+
 #panorama {
   opacity: 0;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
-#panorama, #panorama .face {
+
+#panorama,
+#panorama .face {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-#panorama .face, .label {
-  -webkit-backface-visibility:hidden;
-  -moz-backface-visibility:hidden;
-  backface-visibility:hidden;
+
+#panorama .face,
+.label {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
+
 #panorama .face:nth-child(1) {
   background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
   -webkit-transform: rotateX(90deg) translateZ(-199px);
   -moz-transform: rotateX(90deg) translateZ(-199px);
   transform: rotateX(90deg) translateZ(-199px);
 }
+
 #panorama .face:nth-child(2) {
   background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
   -webkit-transform: rotateX(-90deg) translateZ(-199px);
   -moz-transform: rotateX(-90deg) translateZ(-199px);
   transform: rotateX(-90deg) translateZ(-199px);
 }
+
 #panorama .face:nth-child(3) {
   background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
   -webkit-transform: rotateY(90deg) translateZ(-199px);
   -moz-transform: rotateY(90deg) translateZ(-199px);
   transform: rotateY(90deg) translateZ(-199px);
 }
+
 #panorama .face:nth-child(4) {
   background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
   -webkit-transform: rotateY(-90deg) translateZ(-199px);
   -moz-transform: rotateY(-90deg) translateZ(-199px);
   transform: rotateY(-90deg) translateZ(-199px);
-
 }
+
 #panorama .face:nth-child(5) {
   background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
   -webkit-transform: translateZ(-199px);
   -moz-transform: translateZ(-199px);
   transform: translateZ(-199px);
 }
+
 #panorama .face:nth-child(6) {
   background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
   -webkit-transform: rotateY(180deg) translateZ(-199px);
@@ -159,20 +252,26 @@ body {
   padding: 3px 3px 3px 0;
   font-style: italic;
 }
-.label:before, .label hr {
+
+.label:before,
+.label hr {
   position: absolute;
-  left: 0; bottom: 0;
+  left: 0;
+  bottom: 0;
   height: 2px;
   background: #FFF;
 }
+
 .label:before {
   content: '';
   width: 100%;
-  box-shadow: 1px 1px 2px rgba(0,0,0,.50);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .50);
 }
+
 .label hr {
-  margin: 0; border: 0;
-  box-shadow: 1px -1px 2px rgba(0,0,0,.50);
+  margin: 0;
+  border: 0;
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
   -webkit-transform: rotate(110deg);
   -moz-transform: rotate(110deg);
   transform: rotate(110deg);
@@ -180,37 +279,52 @@ body {
   -moz-transform-origin: 1px 1px;
   transform-origin: 1px 1px;
 }
+
 .label hr:before {
   content: '';
   position: absolute;
-  right: -3px; top: -3px;
-  height: 8px; width: 8px;
+  right: -3px;
+  top: -3px;
+  height: 8px;
+  width: 8px;
   background: #FFF;
   border-radius: 4px;
-  box-shadow: 1px -1px 2px rgba(0,0,0,.50);
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
 }
 
 #l1 {
-  left: 140px; bottom: 30px;
+  left: 140px;
+  bottom: 30px;
   -webkit-transform: translateZ(50px);
   -moz-transform: translateZ(50px);
   transform: translateZ(50px);
 }
-#l1 hr {width: 30px;}
+
+#l1 hr {
+  width: 30px;
+}
 
 #l2 {
-  left: 190px; bottom: 70px;
+  left: 190px;
+  bottom: 70px;
   -webkit-transform: translateZ(70px);
   -moz-transform: translateZ(70px);
   transform: translateZ(70px);
 }
-#l2 hr {width: 70px;}
+
+#l2 hr {
+  width: 70px;
+}
 
 #l3 {
-  left: 190px; bottom: 50px;
+  left: 190px;
+  bottom: 50px;
   -webkit-transform: translateZ(30px);
   -moz-transform: translateZ(30px);
   transform: translateZ(30px);
 }
-#l3 hr {width: 50px;}
+
+#l3 hr {
+  width: 50px;
+}
 </style>

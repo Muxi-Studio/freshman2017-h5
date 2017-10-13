@@ -1,6 +1,7 @@
 <template>
   <div class="app-all">
-    <loading></loading>
+    <panorama></panorama>
+    <!-- <loading v-if="showPage==='loading'"></loading> -->
     <!-- <question v-if="showPage==='question'"></question> -->
     <!-- <red v-if="showNum===0" @togreen="addgreen()"></red>
     <green v-if="showNum===1" @toblue="addblue()"></green>
@@ -15,7 +16,8 @@ import green from './green.vue'
 import red from './red.vue'
 import blue from './blue.vue'
 import loading from './loading.vue'
-import question from './question-page'
+import question from './question-page.vue'
+import panorama from './panorama.vue'
 
 export default {
   data(){
@@ -28,7 +30,8 @@ export default {
      'green':green,
      'blue':blue,
      'loading':loading,
-     'question':question
+     'question':question,
+     'panorama':panorama
     },
     methods: {
       addgreen:function(){
