@@ -6,7 +6,7 @@
             <div class="loading_sun">
            </div>
        </div>
-       <div class="loading_sprite"></div>
+       <div class="loading_sprite" ></div>
        <div class='loading_wave'></div>
        <div class="loading_button">
            <a href="">
@@ -30,19 +30,35 @@ export default {
   }
 </script>
 
-<style lang="scss">
+<style lang="sass">
+ @import url('../sprite/_sprites_inners.scss');
+ 
+ .loading_sprite{
+   
+    // @include sprite($img_1)
+    // height: 200px;
+    // width: auto;
+    // margin-top: 2rem;
+    // position: relative;
+    // left: 50%;
+    // transform:translate(-50%);
+    // margin-left: -50%;
+
+//     background-image: url('../sprite/sprite.jpg');
+}
 .loading{
     width: 100%;
     min-height: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center ;
     background-size: cover;
-    background-image: url('../sprite/sprite.jpg');
+     background-image:url('../sprite/sprite_inners.jpg'); 
     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .loading_wave{
     position: relative;
+    // top: 220px;
     left: 50%;
     margin-left: -5rem;
     animation: larg 2s ease forwards;
@@ -72,16 +88,11 @@ export default {
     padding-top: 30%;
     margin-left:70%;
 }
-.loading_sprite{
-    position: relative;
-    left: 50%;
-    transform:translate(-50%);
-    height: 50vh;
-    width:50vw;
-}
+
 .loading_button{
   display: inline-block;
   position: relative;
+//   top: 300px;
   left: 50%;
   transform:translate(-50%);
   margin-top: 1em;

@@ -55,7 +55,7 @@ module.exports = {
     plugins: [
         new SpritesmithPlugin({
             src: {
-                cwd: './src/assets/',
+                cwd: './src/assets/asserts_common/',
                 glob: '*.jpg'
             },
             target: {
@@ -64,6 +64,22 @@ module.exports = {
             },
             apiOptions: {
                 cssImageRef: '../sprite/sprite.jpg'
+            },
+            spritesmithOptions: {
+                algorithm: 'top-down'
+            }
+        }),
+        new SpritesmithPlugin({
+            src: {
+                cwd: './src/assets/asserts/',
+                glob: '*.jpg'
+            },
+            target: {
+                image: './src/sprite/sprite_inners.jpg',
+                css: './src/sprite/_sprite_inners.scss'
+            },
+            apiOptions: {
+                cssImageRef: '../sprite/sprite_inners.jpg'
             },
             spritesmithOptions: {
                 algorithm: 'top-down'
