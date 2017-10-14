@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap"  @touchstart='Down($event)' @touchmove='Move($event)' @touchend='Up()'>
+  <div class="wrap"  @touchstart='Down($event)' @touchmove='Move($event)' @touchend='Up()' >
     <div id="this">
       <div id="loader"></div>
 
@@ -45,12 +45,18 @@ export default {
       o:0,
       p:'',
       images: [
-        'http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg',
-        'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
-        'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
-        'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
-        'http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg',
-        'http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg'
+        'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+         'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+          'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+           'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+            'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+             'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+             
+        // 'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
+        // 'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
+        // 'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
+        // 'http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg',
+        // 'http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg'
       ],
 
     }
@@ -61,23 +67,27 @@ export default {
     // },
 
     Move: function(e) {
-      console.log('Move');
+     let startPos = {x:e.touches[0].pageX,y:e.touches[0].pageY,time:+new Date};
+     let  endPos = {x:e.touches[0].pageX - startPos.x,y:e.touches[0].pageY - startPos.y};
+　　 let  isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+　　  if(isScrolling === 0){
+　　　　e.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+      }
       if (this.drag) {
-        this.r = this.x - e.clientX;
+        this.r = this.x - e.touches[0].clientX;
         this.p.style.webkitTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
         this.p.style.mozTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
         this.p.style.transform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
       }
     },
     Down: function(e) {
-       console.log('Down');
+      
       this.o = this.r;
-      this.x = this.r + e.clientX;
+      this.x = this.r + e.touches[0].clientX;
       this.drag = true;
       this.time = new Date();
     },
     Up: function() {
-       console.log('Up');
         if (this.drag) {
           var time = new Date() - this.time;
           var path = this.r - this.o;
@@ -89,7 +99,12 @@ export default {
   },
 
   created: function() {
-    window.requestAnimFrame = (function() {
+   
+  },
+  
+
+  mounted:function(){
+     window.requestAnimFrame = (function() {
       return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -97,9 +112,6 @@ export default {
           window.setTimeout(callback, 1000 / 60);
         };
     })();
-
-  },
-  mounted:function(){
     this.$nextTick(()=>{
         this.e = document.getElementById('this');
         this.p = document.getElementById('panorama');
@@ -115,8 +127,7 @@ export default {
           img.src = this.images[i];
         }
         let self=this;
-        let Spin= function() {
-         console.log('Spin');
+        let spin= function() {
             if (!self.drag) {
               self.r += self.speed;
               self.speed /= self.brake;
@@ -124,9 +135,10 @@ export default {
               self.p.style.mozTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
               self.p.style.transform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
             }
+            window.requestAnimFrame(spin);
      };
-      window.requestAnimFrame(Spin);
-    })
+        window.requestAnimFrame(spin);
+    });
   }
 }
 </script>
@@ -203,42 +215,48 @@ body {
 }
 
 #panorama .face:nth-child(1) {
-  background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
+ // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
+   background-image: url( 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: rotateX(90deg) translateZ(-199px);
   -moz-transform: rotateX(90deg) translateZ(-199px);
   transform: rotateX(90deg) translateZ(-199px);
 }
 
 #panorama .face:nth-child(2) {
-  background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
+  //background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
+     background-image: url( 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: rotateX(-90deg) translateZ(-199px);
   -moz-transform: rotateX(-90deg) translateZ(-199px);
   transform: rotateX(-90deg) translateZ(-199px);
 }
 
 #panorama .face:nth-child(3) {
-  background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
+ // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
+    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: rotateY(90deg) translateZ(-199px);
   -moz-transform: rotateY(90deg) translateZ(-199px);
   transform: rotateY(90deg) translateZ(-199px);
 }
 
 #panorama .face:nth-child(4) {
-  background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
+ // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
+    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: rotateY(-90deg) translateZ(-199px);
   -moz-transform: rotateY(-90deg) translateZ(-199px);
   transform: rotateY(-90deg) translateZ(-199px);
 }
 
 #panorama .face:nth-child(5) {
-  background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
+  //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
+     background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: translateZ(-199px);
   -moz-transform: translateZ(-199px);
   transform: translateZ(-199px);
 }
 
 #panorama .face:nth-child(6) {
-  background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
+ // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
+    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
   -webkit-transform: rotateY(180deg) translateZ(-199px);
   -moz-transform: rotateY(180deg) translateZ(-199px);
   transform: rotateY(180deg) translateZ(-199px);

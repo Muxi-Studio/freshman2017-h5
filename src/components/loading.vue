@@ -40,7 +40,6 @@ export default {
  .loading_sun{
     @include sprite($sun,$sun-height);
     background-repeat:no-repeat;
-    
 }
 .loading_only_sun{
      @include sprite($only-sun,$only-sun-height);
@@ -68,6 +67,12 @@ export default {
     position: relative;
     left: 50%;
     margin-left: -5rem;
+    -webkit-animation: larg 2s ease forwards;
+    @-webkit-keyframes larg {
+        to{
+            width: 10rem;
+        }
+    }
     animation: larg 2s ease forwards;
     @keyframes larg {
         to{

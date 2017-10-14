@@ -1,6 +1,6 @@
 <template>
   <div class="app-all">
-    <panorama></panorama>
+    <panorama v-if="showPage==='panorama'"></panorama>
     <!-- <loading v-if="showPage==='loading'"></loading> -->
     <!-- <question v-if="showPage==='question'"></question> -->
     <!-- <red v-if="showNum===0" @togreen="addgreen()"></red>
@@ -22,7 +22,7 @@ import panorama from './panorama.vue'
 export default {
   data(){
     return {
-     showPage:'question'
+     showPage:'panorama'
     }
   },
     components: {
