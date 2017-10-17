@@ -79,7 +79,7 @@ $spritesheet-width: 646px;
 $spritesheet-height: 800px;
 $spritesheet-image: '../sprite/sprite_inners.jpg';
 $spritesheet-sprites: ($only-sun, $question-head2, $sun, $loading-star, $loading-head1, $shouye, );
-$spritesheet: (646px, 800px, '../sprite/sprite_inners.png', $spritesheet-sprites, );
+$spritesheet: (646px, 800px, '../sprite/sprite_inners.jpg', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

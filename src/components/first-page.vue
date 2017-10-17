@@ -30,14 +30,14 @@
                       <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
-                      <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
+                      <!-- <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td> -->
                   </tr>
                   <tr>
                     <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class="up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
-                      <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
+                      <!-- <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td> -->
                   </tr>
               </table>
             

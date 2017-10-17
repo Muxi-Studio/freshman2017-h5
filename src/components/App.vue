@@ -1,20 +1,17 @@
 <template>
   <div class="app-all">
-    <first-page></first-page>
+    <product-page></product-page>
+    <!-- <first-page></first-page> -->
     <!-- <test-panorama></test-panorama> -->
     <!-- <panorama v-if="showPage==='panorama'"></panorama> -->
     <!-- <loading v-if="showPage==='loading'"></loading> -->
     <!-- <question v-if="showPage==='question'"></question> -->
-    <!-- <red v-if="showNum===0" @togreen="addgreen()"></red>
-    <green v-if="showNum===1" @toblue="addblue()"></green>
-    <blue v-if="showNum===2" @toword="addword()"></blue>
-    <play-word v-if='showNum===3'></play-word> -->
   </div>
 </template>
 
 
 <script>
-import green from './green.vue'
+import productPage from './product-page.vue'
 import red from './red.vue'
 import blue from './blue.vue'
 import loading from './loading.vue'
@@ -30,7 +27,7 @@ export default {
   },
     components: {
      'red':red,
-     'green':green,
+     'product-page':productPage,
      'blue':blue,
      'loading':loading,
      'question':question,
