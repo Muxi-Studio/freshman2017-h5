@@ -53,22 +53,22 @@ module.exports = {
         modules: ["node_modules", "spritesmith-generated"]
     },
     plugins: [
-        // new SpritesmithPlugin({
-        //     src: {
-        //         cwd: './src/assets/asserts_common/',
-        //         glob: '*.jpg'
-        //     },
-        //     target: {
-        //         image: './src/sprite/sprite.jpg',
-        //         css: './src/sprite/_sprite.scss'
-        //     },
-        //     apiOptions: {
-        //         cssImageRef: '../sprite/sprite.jpg'
-        //     },
-        //     spritesmithOptions: {
-        //         algorithm: 'top-down'
-        //     }
-        // }),
+        new SpritesmithPlugin({
+            src: {
+                cwd: './src/assets/first-page-assert/',
+                glob: '*.png'
+            },
+            target: {
+                image: './src/sprite/first-page-sprite.jpg',
+                css: './src/sprite/_first-page-sprite.scss'
+            },
+            apiOptions: {
+                cssImageRef: '../sprite/first-page-sprite.jpg'
+            },
+            spritesmithOptions: {
+                algorithm: 'top-down'
+            }
+        }),
         new SpritesmithPlugin({
             src: {
                 cwd: './src/assets/asserts/',
