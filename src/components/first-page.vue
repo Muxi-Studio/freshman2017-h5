@@ -92,14 +92,14 @@ export default {
     @include father(150vw,101vh,75vh,105vw);
 }
 .top-left-star-inner{
-    opacity:0.5;
+    opacity:0.1;
     @include sprite($first-page-top-left-star,$first-page-top-left-star-height);
 }
 .top-right-star{
       @include father(72vw,65vh,409vh,528vw);
 }
 .top-right-star-inner{
-    opacity:0.5;
+    opacity:0.3;
     @include sprite($first-page-top-right-star,$first-page-top-right-star-height);
 }
 .top-light{
@@ -142,7 +142,7 @@ export default {
      @include father(72vw,65vh,950vh,614vw);
 }
 .bottom-right-star-inner{
-    opacity:0.5;
+    opacity:0.3;
     @include sprite($first-page-top-right-star,$first-page-top-right-star-height);
 }
 table{

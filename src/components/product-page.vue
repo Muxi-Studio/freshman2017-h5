@@ -3,16 +3,18 @@
 
         <a class="turn-back" src="#">
             <div class="turn-back-triangle">
+                <div class="turn-back-triangle-inner">
 
+                </div>
             </div>
-            返回星球
+            <div class="turn-back-word">返回星球</div>
         </a>
         <div class="title">
-            <div class="title-left">产品组</div>
-            <div class="title-right">
+            <div class="title-inner"></div>
+            <!-- <div class="title-right">
                 <div class="title-right-top"> 秋招</div>
                 <div class="title-right-bottom">介绍</div>
-            </div>
+            </div> -->
         </div>
             <div class="border">
                 <div class="border-left"></div>
@@ -20,16 +22,29 @@
                 <div class="border-top"></div>
                 <div class="border-right"></div>
             </div>
-
+            <!-- <div class="paperclip"></div> -->
             <div class="join-word">来加入</div>
 
-            <div>
-                <div class="line1">团队里的参谋长</div>
+            <div class="center-words">
+                <div class="center-words-inner"></div>
+                <!-- <div class="line1">团队里的参谋长</div>
                 <div class="line2">研究产品
                     <i class="space"></i>分析需求</div>
                 <div class="line3">产品开发
                     <i class="space"></i>产品迭代</div>
-                <div class="line4">做出互联网产品</div>
+                <div class="line4">做出互联网产品</div> -->
+            </div>
+            <div class="center_sprite">
+                <div class="center_sprite_inner"></div>
+            </div>
+            <div class="blue_line1"></div>
+            <div class="blue_line2"></div>
+            <div class="blue_line3"></div>
+            <div class="triangles">
+                <div class="yellow_triangle"></div>
+                <div class="left_white_triangle"></div>
+                <div class="center_white_triangle"></div>
+                <div class="right_white_triangle"></div>
             </div>
         </div>
 </template>
@@ -50,6 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../sprite/firstPage.scss';
 @mixin father($width, $height, $top, $left) {
     width: ($width/750*100);
     height: ($height/1334*100);
@@ -76,30 +92,54 @@ export default {
 }
 
 .turn-back {
-    @include father(189vw,
-    26vh,
-    50vh,
-    40vw);
+    @include father(187vw,
+    30vh,
+    52vh,
+    41vw);
     color: rgb(230, 230, 230);
 }
+.turn-back-triangle{
+   float: left;
+   width: (45vw/750*100);
+   height: (31vh/1334*100);
+}
+.turn-back-triangle-inner{
+    @include sprite($product-triangle,$product-triangle-height);
+}
+.turn-back-word{
+    font-weight: bolder;
+    font-size: (26vw/750*100);
+    @include pos(0vh,63vw);
+    line-height:125%;
+    letter-spacing: (3vw/750*100);
+}
+.title{
+    @include father(454vw,140.6vh,158vh,176vw);
+ 
+}
+.title-inner{
+    @include sprite($product-title,$product-title-height);
+    background-repeat: no-repeat;
+}
 
-
-
-
+.join-word{
+    @include pos(308vh,297vw);
+    color: rgb(255,255,255);
+    font-size:(42vw/750*100);
+    line-height: 100%;
+    letter-spacing: (7vw/750*100);
+}
 .border-top:before {
     content: '';
     @include father(0vw, 3vw, 292vh,249vw );
     background-color:rgb(176,105,22);
     @keyframes appendtop {
         to{
-            width: (227vw/750*100);
+            width: (229vw/750*100);
         }
     }
     animation: appendtop 2s ease 1s forwards;
 }
-
-
-
 .border-left:before {
     content: '';
     @include father(3vw,0vh ,292vh,247vw );
@@ -111,10 +151,6 @@ export default {
     }
     animation: appendleft 1s ease  forwards;
 }
-
-
-
-
 .border-right:after {
     content: '';
     @include father(3vw, 0vh,292vh,477vw );
@@ -138,5 +174,177 @@ export default {
     }
     animation: appendbottom 2s ease 1s forwards;
 }
+.center-words{
+    @include father(379vw,187vh ,405vh , 178vw);
+}
+.center-words-inner{
+    @include sprite($product-center-word,$product-center-word-height);
+}
+.center_sprite{
+    @include father(701vw,379vh,862vh ,11vw )
+}
+.center_sprite_inner{
+    @include sprite($product-center-sprite,$product-center-sprite-height);
+}
+.blue_line1::before {
+content: "";
+height: (5vh/1334*100) ;
+width: 0;
+border-radius: 0.6em 0.6em 0 0.6em;
+display: block;
+// margin-top: 0.35em;
+animation: appendbefore1 2s ease-in  forwards ;
+@keyframes appendbefore1 {
+    60%{
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+        width: (21vw/750*100) ;
+    }
+    80%{
+        width: (21vw/750*100) ;
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }
+    
+     100%{
+        width: (21vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }  
+}
+}
+
+.blue_line1 {
+@include pos(1060vh,400vw);
+}
+.blue_line1::after {
+position: relative;
+left: (21vw/750*100);
+display: block;
+content: "";
+height: (5vh/1334*100);
+width: 0;
+border-radius:  0.6em ;
+margin-top: (-10vh/1334*100);
+animation: appendafter1 2s  ease 1s forwards ;
+@keyframes appendafter1 {
+    100%{
+        width: (65vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-right: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }   
+}
+}
+.blue_line2::before {
+content: "";
+height: (6vh/1334*100) ;
+width: 0;
+border-radius: 0.6em;
+display: block;
+margin-top: 0.35em;
+animation: appendbefore2 2s ease-in 2s forwards ;
+@keyframes appendbefore2 {
+    60%{
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+        width: (34vw/750*100) ;
+    }
+    80%{
+        width: (34vw/750*100) ;
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }
+    
+     100%{
+        width: (34vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }  
+}
+}
+
+.blue_line2 {
+@include pos(1120vh,117vw);
+}
+.blue_line2::after {
+position: relative;
+left: (21vw/750*100);
+display: block;
+content: "";
+height: (6vh/1334*100) ;
+width: 0;
+border-radius: 0.6em;
+margin-top: -(10vh/1334*100);
+animation: appendafter2 2s  ease 2s forwards ;
+@keyframes appendafter2 {
+    100%{
+        width: (98vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-right: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }   
+}
+}
+.blue_line3::before {
+content: "";
+height: (10vh/1334*100) ;
+width: 0;
+border-radius: 0.6em;
+display: block;
+margin-top: 0.35em;
+animation: appendbefore3 2s ease-in 3s forwards ;
+@keyframes appendbefore3 {
+    60%{
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+        width: (87vw/750*100) ;
+    }
+    80%{
+        width: (87vw/750*100) ;
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }
+    
+     100%{
+        width: (87vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-left: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }  
+}
+}
+
+.blue_line3 {
+@include pos(1225vh,307vw);
+}
+.blue_line3::after {
+position: relative;
+left: (87vw/750*100);
+display: block;
+content: "";
+height: (10vh/1334*100) ;
+width: 0;
+border-radius: 0.6em;
+margin-top: -(10vh/1334*100);
+animation: appendafter3 2s  ease 3s forwards ;
+@keyframes appendafter3 {
+    100%{
+        width: (271vw/750*100) ;
+        border-bottom: (10vh/1334*100) solid rgb(33,9,84);
+        border-right: (10vh/1334*100) solid rgb(33,9,84);
+        border-top: (10vh/1334*100) solid rgb(33,9,84);
+      
+    }   
+}
+}
+
 </style>
 
