@@ -11,10 +11,6 @@
         </a>
         <div class="title">
             <div class="title-inner"></div>
-            <!-- <div class="title-right">
-                <div class="title-right-top"> 秋招</div>
-                <div class="title-right-bottom">介绍</div>
-            </div> -->
         </div>
             <div class="border">
                 <div class="border-left"></div>
@@ -22,17 +18,10 @@
                 <div class="border-top"></div>
                 <div class="border-right"></div>
             </div>
-            <!-- <div class="paperclip"></div> -->
             <div class="join-word">来加入</div>
 
             <div class="center-words">
                 <div class="center-words-inner"></div>
-                <!-- <div class="line1">团队里的参谋长</div>
-                <div class="line2">研究产品
-                    <i class="space"></i>分析需求</div>
-                <div class="line3">产品开发
-                    <i class="space"></i>产品迭代</div>
-                <div class="line4">做出互联网产品</div> -->
             </div>
             <div class="center_sprite">
                 <div class="center_sprite_inner"></div>
@@ -40,12 +29,19 @@
             <div class="blue_line1"></div>
             <div class="blue_line2"></div>
             <div class="blue_line3"></div>
-            <div class="triangles">
-                <div class="yellow_triangle"></div>
-                <div class="left_white_triangle"></div>
-                <div class="center_white_triangle"></div>
-                <div class="right_white_triangle"></div>
+            <div class="yellow_triangle">
+                <div class="yellow_triangle_inner"></div>
             </div>
+            <div class="left_white_triangle">
+                <div class="left_white_triangle_inner"></div>
+            </div>
+            <div class="center_white_triangle">
+                <div class="center_white_triangle_inner"></div>
+            </div>
+            <div class="right_white_triangle">
+                <div class="right_white_triangle_inner"></div>
+            </div>
+            
         </div>
 </template>
 <script>
@@ -190,9 +186,8 @@ export default {
 content: "";
 height: (5vh/1334*100) ;
 width: 0;
-border-radius: 0.6em 0.6em 0 0.6em;
+border-radius: 0.6em;
 display: block;
-// margin-top: 0.35em;
 animation: appendbefore1 2s ease-in  forwards ;
 @keyframes appendbefore1 {
     60%{
@@ -345,6 +340,65 @@ animation: appendafter3 2s  ease 3s forwards ;
     }   
 }
 }
+.left_white_triangle{
+   @include father(35vw,60vh,1006vh ,508vw );
+   animation: left_white_move 2s ease infinite;
+   @keyframes left_white_move {
+       50%{
+           @include pos(1006vh ,520vw);
+       }
+       100%{
+           @include pos(1006vh ,508vw);
+       }
+   }
+}
+.left_white_triangle_inner{
+    @include sprite($product-left-white-triangle,$product-left-white-triangle-height);
+    background-repeat: no-repeat;
+}
+.center_white_triangle{
+   @include father(68vw,58vh,1006vh ,552vw );
 
+}
+.center_white_triangle_inner{
+    @include sprite($product-center-white-triangle,$product-center-white-triangle-height);
+    background-repeat: no-repeat;
+}
+.right_white_triangle{
+   @include father(36vw,58vh,1006vh,626vw );
+     animation: right_white_move 2s ease 0.2s infinite;
+   @keyframes right_white_move {
+       50%{
+           @include pos(1006vh ,613vw);
+       }
+       100%{
+           @include pos(1006vh ,626vw);
+       }
+   }
+
+}
+.right_white_triangle_inner{
+    @include sprite($product-right-white-triangle,$product-right-white-triangle-height);
+    background-repeat: no-repeat;
+}
+.yellow_triangle{
+   @include father(71vw,78vh,913vh ,546vw );
+   opacity: 0.5;
+    animation: yellowchange 2s ease infinite;
+    @keyframes yellowchange {
+        50%{
+            width: (82.5vw/750*100);
+            height: (93.6vh/1330*100);
+        }
+        100%{
+            width: (71vw/750*100);
+            height: (78vh/1330*100);
+        }
+    }
+}
+.yellow_triangle_inner{
+    @include sprite($product-yellow-triangle,$product-yellow-triangle-height);
+    background-repeat: no-repeat;
+}
 </style>
 
