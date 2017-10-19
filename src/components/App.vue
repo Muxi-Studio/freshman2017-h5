@@ -1,6 +1,7 @@
 <template>
   <div class="app-all">
-    <product-page></product-page>
+    <design-page></design-page>
+    <!-- <product-page></product-page> -->
     <!-- <first-page></first-page> -->
     <!-- <test-panorama></test-panorama> -->
     <!-- <panorama v-if="showPage==='panorama'"></panorama> -->
@@ -13,7 +14,7 @@
 <script>
 import productPage from './product-page.vue'
 import red from './red.vue'
-import blue from './blue.vue'
+import designPage from './design-page.vue'
 import loading from './loading.vue'
 import question from './question-page.vue'
 import panorama from './panorama.vue'
@@ -28,7 +29,7 @@ export default {
     components: {
      'red':red,
      'product-page':productPage,
-     'blue':blue,
+     'design-page':designPage,
      'loading':loading,
      'question':question,
      'panorama':panorama,

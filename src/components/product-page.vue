@@ -341,14 +341,14 @@ animation: appendafter3 2s  ease 3s forwards ;
 }
 }
 .left_white_triangle{
-   @include father(35vw,60vh,1006vh ,508vw );
+   @include father(35vw,58vh,1006vh ,508vw );
    animation: left_white_move 2s ease infinite;
    @keyframes left_white_move {
        50%{
            @include pos(1006vh ,520vw);
        }
        100%{
-           @include pos(1006vh ,508vw);
+           @include pos(1006vh ,507vw);
        }
    }
 }
@@ -357,7 +357,7 @@ animation: appendafter3 2s  ease 3s forwards ;
     background-repeat: no-repeat;
 }
 .center_white_triangle{
-   @include father(68vw,58vh,1006vh ,552vw );
+   @include father(68vw,57vh,1006vh ,552vw );
 
 }
 .center_white_triangle_inner{
@@ -366,7 +366,7 @@ animation: appendafter3 2s  ease 3s forwards ;
 }
 .right_white_triangle{
    @include father(36vw,58vh,1006vh,626vw );
-     animation: right_white_move 2s ease 0.2s infinite;
+     animation: right_white_move 2s ease 0.08s infinite;
    @keyframes right_white_move {
        50%{
            @include pos(1006vh ,613vw);
