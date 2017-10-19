@@ -1,6 +1,7 @@
 <template>
   <div class="app-all">
-    <design-page></design-page>
+    <web-page></web-page>
+    <!-- <design-page></design-page> -->
     <!-- <product-page></product-page> -->
     <!-- <first-page></first-page> -->
     <!-- <test-panorama></test-panorama> -->
@@ -13,7 +14,7 @@
 
 <script>
 import productPage from './product-page.vue'
-import red from './red.vue'
+import webPage from './web-page.vue'
 import designPage from './design-page.vue'
 import loading from './loading.vue'
 import question from './question-page.vue'
@@ -27,14 +28,14 @@ export default {
     }
   },
     components: {
-     'red':red,
      'product-page':productPage,
      'design-page':designPage,
      'loading':loading,
      'question':question,
      'panorama':panorama,
      'test-panorama':testPanorama,
-     'first-page':firstPage
+     'first-page':firstPage,
+     'web-page':webPage
     },
     methods: {
       addgreen:function(){

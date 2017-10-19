@@ -179,9 +179,9 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
-    -webkit-perspective: 300px;
-    -moz-perspective: 300px;
-    perspective: 300px;
+    -webkit-perspective: 360px;
+    -moz-perspective: 360px;
+    perspective: 360px;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
