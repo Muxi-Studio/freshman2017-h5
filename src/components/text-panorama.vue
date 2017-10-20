@@ -1,389 +1,430 @@
 <template>
-    <div class="wrap" @touchstart='Down($event)' @touchmove='Move($event)' @touchend='Up()'>
-        <div id="this">
-            <div id="loader"></div>
+  <div class="wrap"  @touchstart='Down($event)' @touchmove='Move($event)' @touchend='Up()' >
+    <div id="this">
+      <div id="loader"></div>
 
-            <div id="panorama">
-                <div class="face f1"></div>
-                <div class="face f2"></div>
-                <div class="face f3"></div>
-                <div class="face f4">
-                    <!-- <div class="label" id="l1">
-                        Public Library
-                        <hr />
-                    </div> -->
-                </div>
-                <div class="face f5">
-                    <!-- <div class="label" id="l2">
-                        Hospital
-                        <hr />
-                    </div> -->
-                </div>
-                <div class="face f6">
-                    <!-- <div class="label" id="l3">
-                        Middle school
-                        <hr /> 
-                    </div>-->
-                </div>
-                <div class="face f7"></div>
-                <div class="face f8"></div>
-            </div>
+      <div id="panorama">
+        <div class="face f1"></div>
+        <div class="face f2"></div>
+        <div class="face f3"></div>
+        <div class="face f4">
+          <div class="label" id="l1">
+            Public Library
+            <hr />
+          </div>
         </div>
+        <div class="face f5">
+          <div class="label" id="l2">
+            Hospital
+            <hr />
+          </div>
+        </div>
+        <div class="face f6">
+          <div class="label" id="l3">
+            Middle school
+            <hr />
+          </div>
+        </div>
+        <div class="face f7"></div>
+        <div class="face f8"></div>
+        <div class="face f9"></div>
+        <div class="face f10"></div>
+        <div class="face f11"></div>
+        <div class="face f12"></div>
+        <div class="face f13"></div>
+        <div class="face f14"></div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            loaded: 0,
-            drag: false,
-            speed: 0.5,
-            brake: 1,
-            r: 0,
-            x: 0,
-            time: new Date(),
-            o: 0,
-            p: '',
-            images: [
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                // 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                // 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                // 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
-                // 'https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg',
+  data() {
+    return {
+      loaded: 0,
+      drag: false,
+      speed: 0.5,
+      brake: 1,
+      r: 0,
+      x:0,
+      time:new Date(),
+      o:0,
+      p:'',
+      images: [
+  'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+    'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+      'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+        'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+          'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+            'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+              'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
 
-                // 'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
-                // 'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
-                // 'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
-                // 'http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg',
-                // 'http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg'
-            ],
+    'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+    'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+      'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+        'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+          'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+            'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+              'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+        // 'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
+        // 'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
+        // 'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
+        // 'http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg',
+        // 'http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg'
+      ],
 
-        }
-    },
-    methods: {
-        // addblue: function() {
-        //   this.$emit('toword');
-        // },
-
-        Move: function(e) {
-            let startPos = { x: e.touches[0].pageX, y: e.touches[0].pageY, time: +new Date };
-            let endPos = { x: e.touches[0].pageX - startPos.x, y: e.touches[0].pageY - startPos.y };
-            let isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1 : 0; //isScrolling为1时，表示纵向滑动，0为横向滑动
-            if (isScrolling === 0) {
-                　　　　e.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
-            }
-            if (this.drag) {
-                this.r = this.x - e.touches[0].clientX;
-                this.p.style.webkitTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
-                this.p.style.mozTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
-                this.p.style.transform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
-            }
-        },
-        Down: function(e) {
-
-            this.o = this.r;
-            this.x = this.r + e.touches[0].clientX;
-            this.drag = true;
-            this.time = new Date();
-        },
-        Up: function() {
-            if (this.drag) {
-                var time = new Date() - this.time;
-                var path = this.r - this.o;
-                this.speed = path / time * 5;
-                this.brake = 1.01;
-                this.drag = false;
-            }
-        },
-    },
-
-    created: function() {
-
-    },
-
-
-    mounted: function() {
-        window.requestAnimFrame = (function() {
-            return window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                function(callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                };
-        })();
-        this.$nextTick(() => {
-            this.e = document.getElementById('this');
-            this.p = document.getElementById('panorama');
-            this.l = document.getElementById('loader');
-            for (var i = 0; i < this.images.length; i++) {
-                var img = new Image();
-                this.loaded++;
-                this.l.style.width = this.loaded / this.images.length * 100 + '%';
-                if (this.loaded === this.images.length) {
-                    this.l.style.opacity = 0;
-                    this.p.style.opacity = 1;
-                };
-                img.src = this.images[i];
-            }
-            let self = this;
-            let spin = function() {
-                if (!self.drag) {
-                    self.r += self.speed;
-                    self.speed /= self.brake;
-                    self.p.style.webkitTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
-                    self.p.style.mozTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
-                    self.p.style.transform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
-                }
-                window.requestAnimFrame(spin);
-            };
-            window.requestAnimFrame(spin);
-        });
     }
+  },
+  methods: {
+    // addblue: function() {
+    //   this.$emit('toword');
+    // },
+
+    Move: function(e) {
+     let startPos = {x:e.touches[0].pageX,y:e.touches[0].pageY,time:+new Date};
+     let  endPos = {x:e.touches[0].pageX - startPos.x,y:e.touches[0].pageY - startPos.y};
+　　 let  isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+　　  if(isScrolling === 0){
+　　　　e.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+      }
+      if (this.drag) {
+        this.r = this.x - e.touches[0].clientX;
+        this.p.style.webkitTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+        this.p.style.mozTransform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+        this.p.style.transform = 'rotateY(' + this.r * 180 / 400 + 'deg)';
+      }
+    },
+    Down: function(e) {
+      
+      this.o = this.r;
+      this.x = this.r + e.touches[0].clientX;
+      this.drag = true;
+      this.time = new Date();
+    },
+    Up: function() {
+        if (this.drag) {
+          var time = new Date() - this.time;
+          var path = this.r - this.o;
+          this.speed = path / time * 5;
+          this.brake = 1.01;
+          this.drag = false;
+        }
+      }, 
+  },
+
+  created: function() {
+   
+  },
+  
+
+  mounted:function(){
+     window.requestAnimFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        function(callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+    this.$nextTick(()=>{
+        this.e = document.getElementById('this');
+        this.p = document.getElementById('panorama');
+        this.l = document.getElementById('loader');
+        for (var i = 0; i < this.images.length; i++) {
+          var img = new Image();
+           this.loaded++;
+           this.l.style.width = this.loaded / this.images.length * 100 + '%';
+            if (this.loaded === this.images.length) {
+          this.l.style.opacity = 0;
+          this.p.style.opacity = 1;
+        };
+          img.src = this.images[i];
+        }
+        let self=this;
+        let spin= function() {
+            if (!self.drag) {
+              self.r += self.speed;
+              self.speed /= self.brake;
+              self.p.style.webkitTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+              self.p.style.mozTransform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+              self.p.style.transform = 'rotateY(' + self.r * 180 / 400 + 'deg)';
+            }
+            window.requestAnimFrame(spin);
+     };
+        window.requestAnimFrame(spin);
+    });
+  }
 }
 </script>
 
 <style lang="scss">
-
+*{
+    padding: 0;
+    margin:0;
+}
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    margin: 0;
-    background: #E3E3E3;
-    font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  background: #E3E3E3;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .wrap {
-    background: #FFF;
-    padding: 10px;
-    box-shadow: 0 0 3px #AAA;
-    margin: 0 auto;
-    height: 100%;
-    width:100%;
-    border-radius: 3px;
+  background: #FFF;
+  padding: 10px;
+  box-shadow: 0 0 3px #AAA;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
 }
 
 #this {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    -webkit-perspective: 360px;
-    -moz-perspective: 360px;
-    perspective: 360px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 #loader {
-    position: absolute;
-    left: 0;
-    top: 198px;
-    height: 4px;
-    background: #222;
-    border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 198px;
+  height: 4px;
+  background: #222;
+  border-radius: 2px;
 }
 
 #panorama {
-    opacity: 0;
-    -webkit-transition: opacity 0.5s ease;
-    -moz-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 #panorama,
 #panorama .face {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 #panorama .face,
 .label {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-@mixin picture{
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(60deg) translateZ(-199px);
-    -moz-transform: rotateY(60deg) translateZ(-199px);
-    transform: rotateY(60deg) translateZ(-199px);
-}
-// $i :8;
-// @for $i from 3 to 8{
-//     #panorama .face:nth-child(#{$i}){
-//          @include picture;
-//     }
-// }
 #panorama .face:nth-child(1) {
-   
-    // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateX(90deg) translateZ(-40vh);
-    -moz-transform: rotateX(90deg) translateZ(-40vh);
-    transform: rotateX(90deg) translateZ(-40vh);
+ // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
+   background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateX(90deg) translateZ(-155px);
+  -moz-transform: rotateX(90deg) translateZ(-155px);
+  transform: rotateX(90deg) translateZ(-30vh);
 }
 
 #panorama .face:nth-child(2) {
-    //background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateX(-90deg) translateZ(-40vh);
-    -moz-transform: rotateX(-90deg) translateZ(-40vh);
-    transform: rotateX(-90deg) translateZ(-40vh);
+  //background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
+background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateX(-90deg) translateZ(-155px);
+  -moz-transform: rotateX(-90deg) translateZ(-155px);
+  transform: rotateX(-90deg) translateZ(-30vh);
 }
 
 #panorama .face:nth-child(3) {
-   //  @include picture;
-     // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(60deg) translateZ(-199px);
-    -moz-transform: rotateY(60deg) translateZ(-199px);
-    transform: rotateY(60deg) translateZ(-199px);
+ // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
+    background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateY(90deg) translateZ(-155px);
+  -moz-transform: rotateY(90deg) translateZ(-155px);
+  transform: rotateY(-30deg) translateZ(-155px);
 }
 
 #panorama .face:nth-child(4) {
-   
  // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(-60deg) translateZ(-199px);
-    -moz-transform: rotateY(-60deg) translateZ(-199px);
-    transform: rotateY(-60deg) translateZ(-199px);
-
+    background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateY(-90deg) translateZ(-155px);
+  -moz-transform: rotateY(-90deg) translateZ(-155px);
+  transform: rotateY(-90deg) translateZ(-155px);
 }
-// #panorama>.face{
-//       @include picture;
-// }
 
 #panorama .face:nth-child(5) {
-    //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: translateZ(-199px);
-    -moz-transform: translateZ(-199px);
-    transform: translateZ(-199px);
+  //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
+     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: translateZ(-155px);
+  -moz-transform: translateZ(-155px);
+  transform: translateZ(-155px);
 }
 
 #panorama .face:nth-child(6) {
-    // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(120deg) translateZ(-199px);
-    -moz-transform: rotateY(120deg) translateZ(-199px);
-    transform: rotateY(120deg) translateZ(-199px);
-}
-#panorama .face:nth-child(7) {
-    // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(-120deg) translateZ(-199px);
-    -moz-transform: rotateY(-120deg) translateZ(-199px);
-    transform: rotateY(-120deg) translateZ(-199px);
-}
-#panorama .face:nth-child(8) {
-    // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-    background-image: url('https://wx2.sinaimg.cn/mw690/006P0MECgy1fkhr0oamrhj315n1124a1.jpg');
-    -webkit-transform: rotateY(180deg) translateZ(-199px);
-    -moz-transform: rotateY(180deg) translateZ(-199px);
-    transform: rotateY(180deg) translateZ(-199px);
+ // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
+    background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateY(180deg) translateZ(-155px);
+  -moz-transform: rotateY(180deg) translateZ(-155px);
+  transform: rotateY(-150deg) translateZ(-155px);
 }
 
+#panorama .face:nth-child(7) {
+ // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
+    background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateY(90deg) translateZ(-155px);
+  -moz-transform: rotateY(90deg) translateZ(-155px);
+  transform: rotateY(-180deg) translateZ(-155px);
+}
+
+#panorama .face:nth-child(8) {
+ // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
+    background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+  -webkit-transform: rotateY(-90deg) translateZ(-155px);
+  -moz-transform: rotateY(-90deg) translateZ(-155px);
+  transform: rotateY(-270deg) translateZ(-155px);
+}
+
+// #panorama .face:nth-child(9) {
+//   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
+//      background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: translateZ(-155px);
+//   -moz-transform: translateZ(-155px);
+//   transform: translateZ(-155px);
+// }
+
+// #panorama .face:nth-child(10) {
+//  // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
+//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: rotateY(180deg) translateZ(-155px);
+//   -moz-transform: rotateY(180deg) translateZ(-155px);
+//   transform: rotateY(180deg) translateZ(-155px);
+// }
+
+// #panorama .face:nth-child(11) {
+//  // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
+//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: rotateY(90deg) translateZ(-155px);
+//   -moz-transform: rotateY(90deg) translateZ(-155px);
+//   transform: rotateY(90deg) translateZ(-155px);
+// }
+
+// #panorama .face:nth-child(12) {
+//  // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
+//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: rotateY(-90deg) translateZ(-155px);
+//   -moz-transform: rotateY(-90deg) translateZ(-155px);
+//   transform: rotateY(-90deg) translateZ(-155px);
+// }
+
+// #panorama .face:nth-child(13) {
+//   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
+//      background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: translateZ(-155px);
+//   -moz-transform: translateZ(-155px);
+//   transform: translateZ(-155px);
+// }
+
+// #panorama .face:nth-child(14) {
+//  // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
+//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
+//   -webkit-transform: rotateY(180deg) translateZ(-155px);
+//   -moz-transform: rotateY(180deg) translateZ(-155px);
+//   transform: rotateY(180deg) translateZ(-155px);
+// }
 .label {
-    position: absolute;
-    color: #FFF;
-    font-size: 16px;
-    text-shadow: 1px 1px 2px #000;
-    padding: 3px 3px 3px 0;
-    font-style: italic;
+  position: absolute;
+  color: #FFF;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px #000;
+  padding: 3px 3px 3px 0;
+  font-style: italic;
 }
 
 .label:before,
 .label hr {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    background: #FFF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background: #FFF;
 }
 
 .label:before {
-    content: '';
-    width: 100%;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, .50);
+  content: '';
+  width: 100%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .50);
 }
 
 .label hr {
-    margin: 0;
-    border: 0;
-    box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
-    -webkit-transform: rotate(110deg);
-    -moz-transform: rotate(110deg);
-    transform: rotate(110deg);
-    -webkit-transform-origin: 1px 1px;
-    -moz-transform-origin: 1px 1px;
-    transform-origin: 1px 1px;
+  margin: 0;
+  border: 0;
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
+  -webkit-transform: rotate(110deg);
+  -moz-transform: rotate(110deg);
+  transform: rotate(110deg);
+  -webkit-transform-origin: 1px 1px;
+  -moz-transform-origin: 1px 1px;
+  transform-origin: 1px 1px;
 }
 
 .label hr:before {
-    content: '';
-    position: absolute;
-    right: -3px;
-    top: -3px;
-    height: 8px;
-    width: 8px;
-    background: #FFF;
-    border-radius: 4px;
-    box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  height: 8px;
+  width: 8px;
+  background: #FFF;
+  border-radius: 4px;
+  box-shadow: 1px -1px 2px rgba(0, 0, 0, .50);
 }
 
 #l1 {
-    left: 140px;
-    bottom: 30px;
-    -webkit-transform: translateZ(50px);
-    -moz-transform: translateZ(50px);
-    transform: translateZ(50px);
+  left: 140px;
+  bottom: 30px;
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  transform: translateZ(50px);
 }
 
 #l1 hr {
-    width: 30px;
+  width: 30px;
 }
 
 #l2 {
-    left: 190px;
-    bottom: 70px;
-    -webkit-transform: translateZ(70px);
-    -moz-transform: translateZ(70px);
-    transform: translateZ(70px);
+  left: 190px;
+  bottom: 70px;
+  -webkit-transform: translateZ(70px);
+  -moz-transform: translateZ(70px);
+  transform: translateZ(70px);
 }
 
 #l2 hr {
-    width: 70px;
+  width: 70px;
 }
 
 #l3 {
-    left: 190px;
-    bottom: 50px;
-    -webkit-transform: translateZ(30px);
-    -moz-transform: translateZ(30px);
-    transform: translateZ(30px);
+  left: 190px;
+  bottom: 50px;
+  -webkit-transform: translateZ(30px);
+  -moz-transform: translateZ(30px);
+  transform: translateZ(30px);
 }
 
 #l3 hr {
-    width: 50px;
+  width: 50px;
 }
 </style>

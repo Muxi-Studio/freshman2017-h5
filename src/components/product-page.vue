@@ -177,7 +177,7 @@ export default {
     @include sprite($product-center-word,$product-center-word-height);
 }
 .center_sprite{
-    @include father(701vw,379vh,862vh ,11vw )
+    @include father(701vw,379vh,862vh,11vw )
 }
 .center_sprite_inner{
     @include sprite($product-center-sprite,$product-center-sprite-height);

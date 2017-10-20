@@ -1,10 +1,10 @@
 <template>
   <div class="app-all">
-    <web-page></web-page>
+    <!-- <web-page></web-page> -->
     <!-- <design-page></design-page> -->
     <!-- <product-page></product-page> -->
     <!-- <first-page></first-page> -->
-    <!-- <test-panorama></test-panorama> -->
+    <test-panorama></test-panorama>
     <!-- <panorama v-if="showPage==='panorama'"></panorama> -->
     <!-- <loading v-if="showPage==='loading'"></loading> -->
     <!-- <question v-if="showPage==='question'"></question> -->
