@@ -1,18 +1,20 @@
 <template>
   <div class="app-all">
-    <!-- <web-page></web-page> -->
-    <!-- <design-page></design-page> -->
-    <!-- <product-page></product-page> -->
-    <!-- <first-page></first-page> -->
-    <test-panorama></test-panorama>
-    <!-- <panorama v-if="showPage==='panorama'"></panorama> -->
-    <!-- <loading v-if="showPage==='loading'"></loading> -->
-    <!-- <question v-if="showPage==='question'"></question> -->
+    <android-page v-if="show==='android-page'"></android-page>
+    <web-page v-if="show==='web-page'"></web-page> 
+    <design-page v-if="show==='design-page'"></design-page> 
+     <product-page v-if="show==='product-page'"></product-page> 
+     <first-page v-if="show==='first-page'"></first-page> 
+     <test-panorama ></test-panorama>
+     <panorama v-if="show==='panorama'"></panorama> 
+     <loading v-if="show==='loading'"></loading>
+    <question v-if="show==='question'"></question>
   </div>
 </template>
 
 
 <script>
+import androidPage from './android-page.vue'
 import productPage from './product-page.vue'
 import webPage from './web-page.vue'
 import designPage from './design-page.vue'
@@ -24,36 +26,42 @@ import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-     showPage:'loading'
+     show:'loading'
     }
   },
     components: {
-     'product-page':productPage,
-     'design-page':designPage,
      'loading':loading,
+     'first-page':firstPage,
      'question':question,
      'panorama':panorama,
-     'test-panorama':testPanorama,
-     'first-page':firstPage,
-     'web-page':webPage
+     'product-page':productPage,
+     'design-page':designPage,
+     'web-page':webPage,
+     'android-page':androidPage,
+     'test-panorama':testPanorama, 
     },
     methods: {
-      addgreen:function(){
-        console.log('green')
-        this.showNum=1;
-        return this.showNum;
+      firstPage:function(){
+        this.show='first-page';
       },
-      addblue:function(){
-        this.showNum=2;
-          return this.showNum;
+      questionPage:function(){
+        this.show='question';
       },
-      addred:function(){
-        this.showNum=0;
-          return this.showNum;
+      panorama:function(){
+        this.show='panorama';
       },
-      addword:function(){
-        this.showNum=3;
-        return this.showNum;
+      productPage:function(){
+        this.show='product-page';
+          
+      },
+      designPage:function(){
+        this.show='design-page';
+      },
+      webPage:function(){
+        this.show='web-page';
+      },
+      androidPage:function(){
+        this.show='android-page';
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class='loading'>
+  <div class='loading' :change='go'>
       <div class="loading-star">
           <div class="loading-star-inner">
 
@@ -29,6 +29,13 @@ export default {
       return {
           light:false
       }
+    },
+    computed:{
+        go(){
+            setInterval(()=>{
+                 this.$emit('firstPage');
+            },3000);
+        }
     },
     created:function(){
         setInterval(()=>{
