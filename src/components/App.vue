@@ -26,7 +26,7 @@ import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-     show:'loading'
+    //  show:""
     }
   },
     components: {

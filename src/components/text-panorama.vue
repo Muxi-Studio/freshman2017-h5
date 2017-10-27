@@ -4,14 +4,21 @@
       <div id="loader"></div>
 
       <div id="panorama">
-        <div class="face f1"></div>
+        <div class="face f1">
+         
+        </div>
         <div class="face f2"></div>
-        <div class="face f3"></div>
+        <div class="face f3">
+           
+        </div>
         <div class="face f4">
-          <div class="label" id="l1">
+          <div class="product-star">
+            
+          </div>
+          <!-- <div class="label" id="l1">
             Public Library
             <hr />
-          </div>
+          </div> -->
         </div>
         <div class="face f5">
           <div class="label" id="l2">
@@ -27,12 +34,7 @@
         </div>
         <div class="face f7"></div>
         <div class="face f8"></div>
-        <div class="face f9"></div>
-        <div class="face f10"></div>
-        <div class="face f11"></div>
-        <div class="face f12"></div>
-        <div class="face f13"></div>
-        <div class="face f14"></div>
+     
       </div>
     </div>
   </div>
@@ -60,13 +62,7 @@ export default {
             'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
               'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
 
-    'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-    'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-      'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-        'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-          'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-            'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
-              'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg',
+
         // 'http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg',
         // 'http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg',
         // 'http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg',
@@ -159,6 +155,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../sprite/firstPage.scss';
 *{
     padding: 0;
     margin:0;
@@ -232,13 +229,23 @@ body {
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
+.product-star{
+  width: 80%;
+  height: 80%;
+  background-position-x: 80%;
+  background-position-y: 80%;
+  background-image: url('../assets/first-page-assert/panoramic-product-star.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+ 
+}
 #panorama .face:nth-child(1) {
  // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
    background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
   -webkit-transform: rotateX(90deg) translateZ(-155px);
   -moz-transform: rotateX(90deg) translateZ(-155px);
   transform: rotateX(90deg) translateZ(-30vh);
+
 }
 
 #panorama .face:nth-child(2) {
@@ -255,6 +262,7 @@ background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw
   -webkit-transform: rotateY(90deg) translateZ(-155px);
   -moz-transform: rotateY(90deg) translateZ(-155px);
   transform: rotateY(-30deg) translateZ(-155px);
+ 
 }
 
 #panorama .face:nth-child(4) {
@@ -263,6 +271,7 @@ background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw
   -webkit-transform: rotateY(-90deg) translateZ(-155px);
   -moz-transform: rotateY(-90deg) translateZ(-155px);
   transform: rotateY(-90deg) translateZ(-155px);
+  
 }
 
 #panorama .face:nth-child(5) {
@@ -297,53 +306,7 @@ background-image: url( 'https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw
   transform: rotateY(-270deg) translateZ(-155px);
 }
 
-// #panorama .face:nth-child(9) {
-//   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
-//      background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: translateZ(-155px);
-//   -moz-transform: translateZ(-155px);
-//   transform: translateZ(-155px);
-// }
 
-// #panorama .face:nth-child(10) {
-//  // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: rotateY(180deg) translateZ(-155px);
-//   -moz-transform: rotateY(180deg) translateZ(-155px);
-//   transform: rotateY(180deg) translateZ(-155px);
-// }
-
-// #panorama .face:nth-child(11) {
-//  // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: rotateY(90deg) translateZ(-155px);
-//   -moz-transform: rotateY(90deg) translateZ(-155px);
-//   transform: rotateY(90deg) translateZ(-155px);
-// }
-
-// #panorama .face:nth-child(12) {
-//  // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: rotateY(-90deg) translateZ(-155px);
-//   -moz-transform: rotateY(-90deg) translateZ(-155px);
-//   transform: rotateY(-90deg) translateZ(-155px);
-// }
-
-// #panorama .face:nth-child(13) {
-//   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
-//      background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: translateZ(-155px);
-//   -moz-transform: translateZ(-155px);
-//   transform: translateZ(-155px);
-// }
-
-// #panorama .face:nth-child(14) {
-//  // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-//     background-image: url('https://wx3.sinaimg.cn/wap360/006P0MECly1fkovrbbhsmj31kw16o1kq.jpg');
-//   -webkit-transform: rotateY(180deg) translateZ(-155px);
-//   -moz-transform: rotateY(180deg) translateZ(-155px);
-//   transform: rotateY(180deg) translateZ(-155px);
-// }
 .label {
   position: absolute;
   color: #FFF;
