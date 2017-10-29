@@ -5,7 +5,7 @@
     <design-page v-if="show==='design-page'"></design-page> 
      <product-page v-if="show==='product-page'"></product-page> 
      <first-page v-if="show==='first-page'"></first-page> 
-     <test-panorama ></test-panorama>
+     <!-- <test-panorama ></test-panorama> -->
      <panorama v-if="show==='panorama'"></panorama> 
      <loading v-if="show==='loading'"></loading>
     <question v-if="show==='question'"></question>
@@ -26,7 +26,7 @@ import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-    //  show:""
+     show:"web-page"
     }
   },
     components: {

@@ -299,12 +299,14 @@ export default {
    animation: big-grid3-fade 2s  ease infinite;
 }
 .right-yellow-box{
+    animation: center-sprite-shake 2s ease-in  infinite;
   @include father(415vw,322vh,665vh,280vw);
 }
 .right-yellow-box-inner{
   @include sprite($design-right-box,$design-right-box-height);
 }
 .left-white-grid{
+  animation: center-sprite-shake 2s ease-in  infinite;
   @include father(120vw,102vh ,762vh ,122vw );
 }
 .left-white-grid-inner{
@@ -313,8 +315,11 @@ export default {
 .center-sprite{
   animation: center-sprite-shake 2s ease-in infinite;
   @keyframes center-sprite-shake {
-    to{
+    50%{
       transform: translateY(40vh/1330*100);
+    }
+    100%{
+      transform: translateY(0vh/1330*100);
     }
   }
   @include father(590vw,375vh,809vh,55vw );

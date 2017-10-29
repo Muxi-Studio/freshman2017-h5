@@ -230,7 +230,7 @@ export default {
             transform: translateY(0vh/1334*100);
         }
     }
-  @include father(371vw,427vh ,707vh ,212vw);
+  @include father(371vw,429vh ,707vh ,212vw);
 }
 .center-sprite-inner{
   @include sprite($web-center-sprite,$web-center-sprite-height);
