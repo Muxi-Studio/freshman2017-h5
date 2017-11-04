@@ -1,12 +1,15 @@
 <template>
   <div class='loading' :change='go'>
-      <div class="loading-star">
+      <!-- <div class="loading-star">
           <div class="loading-star-inner">
 
           </div>
+      </div> -->
+      <div class="loading_sun_light">
+          <div class="loading_sun_light_inner"></div>
       </div>
-       <div class="loading_sun_all" :class="{'loading_only_sun':light}"> 
-           <div class="loading_sun_all_inner"  :class="{'loading_only_sun_inner':light}" ></div>
+       <div class="loading_sun" > 
+           <div class="loading_sun_inner"></div>
        </div>
       
        <div class="loading_sprite" >
@@ -37,62 +40,42 @@ export default {
             },3000);
         }
     },
-    created:function(){
-        setInterval(()=>{
-            this.light=!this.light;
-        },500);
-    }
     
   }
 </script>
 
 <style lang="scss">
  @import '../sprite/innerSprite.scss';
- *{
-     padding: 0;
-     margin: 0;
- }
- .loading-star{
-     padding-top: (2.47vh/47.06*100);
-     margin-left: (3.74vw/26.46*100);
-     width: (109vw/750*100);
-     height: (101vh/1334*100);
- }
- .loading-star-inner{
-     @include sprite($loading-star,$loading-star-height);
-     
- }
- .loading_sun_all{
-     position: absolute;
-     top: (124vh/1334*100);
-     right: (90vw/750*100);
-     width: (127vw/750*100);
-     height: (92.5vw/780*100);
- }
-.loading_sun_all_inner{
-    @include sprite($sun,$sun-height);
+ @mixin father($width, $height, $top, $left) {
+    width: ($width/750*100);
+    height: ($height/1334*100);
+    position: absolute;
+    top: ($top/1334*100);
+    left: ($left/750*100);
 }
-
-.loading_only_sun{
-     position: absolute;
-     top: (178vh/1334*100);
-     right: (124vw/750*100);
-     width: (53vw/750*100);
-     height: (26vh/1334*100);
-    
-}
-.loading_only_sun_inner{
+ .loading_sun_light{
+     @include father(273vw, 237vh,65vh ,422vw );
+     animation: sun_light 1s ease  infinite;
+     @keyframes sun_light {
+       to{
+            opacity: 0;
+       }  
+     }
+ }
+ .loading_sun_light_inner{
+     @include sprite($sunlighe,$sunlighe-height);
+ }
+ .loading_sun{
+     @include father(53vw, 26vh, 178vh,519vw );
+ }
+ .loading_sun_inner{
      @include sprite($only-sun,$only-sun-height);
 }
  .loading_sprite{
-    position: absolute;
-    top: (310vh/1334*100);
-    left: (212vw/750*100);
-    width:(356vw/750*100);
-    height:(392vh/1334*100);
+    @include father(347vw, 404vh,312vh ,213vw );
 }
 .loading_sprite-inner{
-    @include sprite($shouye,$shouye-height);
+    @include sprite($shuoye,$shuoye-height);
 }
 .loading{
     width: 100%;
@@ -127,11 +110,7 @@ export default {
     background-image: linear-gradient(135deg,transparent 45%, #CC9900 55%,transparent 60%),linear-gradient(45deg,transparent 45%,#CC9900 55%,transparent 60%);
 }
 .loading_button{
-  position: absolute;
-  top: (739vh/1334*100);
-  left: (298vw/750*100);
-  height: (43vh/1334*100);
-  width: (137vw/750*100);
+  @include father(137vw, 43vh, 739vh,298vw );
   border-radius: 5pt;
   border-style: solid;
   border-width: thin;

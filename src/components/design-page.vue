@@ -1,13 +1,6 @@
 <template>
   <div class="design-page-all"> 
-      <div class="turn_back">
-        <div class="turn_back_triangle">
-          <div class="turn_back_triangle_inner"></div>
-        </div>
-        <div class="turn_back_word">
-          返回星球
-        </div>
-      </div>
+    <turn-back></turn-back>
        <div class="border">
                 <div class="border-left"></div>
                 <div class="border-bottom"></div>
@@ -81,6 +74,7 @@
 </template>
 
 <script>
+import turn_back from './turn-back.vue'
 export default {
     data(){
       return {
@@ -91,6 +85,9 @@ export default {
       addblue:function(){
         this.$emit('toword');
       }
+    },
+    components:{
+      'turn-back':turn_back
     }
     
   }
@@ -122,28 +119,28 @@ export default {
     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 
-.turn_back {
-    @include father(187vw,
-    30vh,
-    52vh,
-    41vw);
-    color: rgb(230, 230, 230);
-}
-.turn_back_triangle{
-   float: left;
-   width: (45vw/750*100);
-   height: (31vh/1334*100);
-}
-.turn_back_triangle_inner{
-    @include sprite($product-triangle,$product-triangle-height);
-}
-.turn_back_word{
-    font-weight: bolder;
-    font-size: (26vw/750*100);
-    @include pos(0vh,63vw);
-    line-height:125%;
-    letter-spacing: (3vw/750*100);
-}
+// .turn_back {
+//     @include father(187vw,
+//     30vh,
+//     52vh,
+//     41vw);
+//     color: rgb(230, 230, 230);
+// }
+// .turn_back_triangle{
+//    float: left;
+//    width: (45vw/750*100);
+//    height: (31vh/1334*100);
+// }
+// .turn_back_triangle_inner{
+//     @include sprite($product-triangle,$product-triangle-height);
+// }
+// .turn_back_word{
+//     font-weight: bolder;
+//     font-size: (26vw/750*100);
+//     @include pos(0vh,63vw);
+//     line-height:125%;
+//     letter-spacing: (3vw/750*100);
+// }
 .title{
     @include father(395vw,91.5vh,144vh,174vw);
  
