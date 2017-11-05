@@ -26,7 +26,7 @@ import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-     show:"design-page"
+     show:"product-page"
     }
   },
     components: {
@@ -71,6 +71,12 @@ export default {
   padding: 0;
   margin:0;
 }
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 .app-all{
   height: 100vh;
 }

@@ -1,32 +1,17 @@
 <template>
 <div class="android-page-all">
-      <a class="turn-back" src="#">
-            <div class="turn-back-triangle">
-                <div class="turn-back-triangle-inner">
-
-                </div>
-            </div>
-            <div class="turn-back-word">返回星球</div>
-        </a>
+    <turn-back></turn-back>
         <div class="title">
-            <div class="title-inner"></div>
+          安卓组
         </div>
-            <div class="border">
-                <div class="border-left"></div>
-                <div class="border-bottom"></div>
-                <div class="border-top"></div>
-                <div class="border-right"></div>
-            </div>
-            <div class="welcome-word">欢迎你</div>
-
-            <div class="center-words">
-                <div class="center-words-inner"></div>
-            </div>
-            <div class="center-light">
-              <div class="center-light-inner">
-
-              </div>
-            </div>
+        <center-words class="center-words"></center-words>
+          <div class="android-picture"></div>
+          <div class="android-introduce">
+              界面打造高手<br>
+              实现用户交互<br>
+              对接后端数据<br>
+              完美展现产品
+          </div>
             <div class="center_sprite">
                 <div class="center_sprite_inner"></div>
             </div>
@@ -52,6 +37,8 @@
 </template>
 
 <script>
+import turn_back from "./turn-back.vue";
+import center_words from "./center-words";
 export default {
   data() {
     return {};
@@ -61,6 +48,10 @@ export default {
       console.log("change to green");
       this.$emit("togreen");
     }
+  },
+  components: {
+    "turn-back": turn_back,
+    "center-words":center_words,
   }
 };
 </script>
@@ -92,92 +83,30 @@ export default {
     font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 
-.turn-back {
-    @include father(187vw,
-    30vh,
-    52vh,
-    41vw);
-    color: rgb(230, 230, 230);
-}
-.turn-back-triangle{
-   float: left;
-   width: (45vw/750*100);
-   height: (31vh/1334*100);
-}
-.turn-back-triangle-inner{
-    @include sprite($product-triangle,$product-triangle-height);
-}
-.turn-back-word{
-    font-weight: bolder;
-    font-size: (26vw/750*100);
-    @include pos(0vh,63vw);
-    line-height:125%;
-    letter-spacing: (3vw/750*100);
-}
+
 .title{
-    @include father(407vw,93vh,144vh,163vw);
- 
+    text-align: center;
+    padding-top: (142vh/1334*100);
+    color: rgb(255, 255, 255);
+    font-size: (80vw/750*100);
 }
-.title-inner{
-    @include sprite($android-title,$android-title-height);
-    background-repeat: no-repeat;
+.center-word{
+   margin-top: (30vh/1334*100)!important;
 }
-
-.welcome-word{
-    @include pos(298vh,290vw);
-    color: rgb(255,255,255);
-    font-size:(42vw/750*100);
-    line-height: 100%;
-    letter-spacing: (7vw/750*100);
-}
-.border-top:before {
-    content: '';
-    @include father(0vw, 3vw, 282vh,247vw );
-    background-color:rgb(176,105,22);
-    @keyframes appendtop {
-        to{
-            width: (229vw/750*100);
-        }
-    }
-    animation: appendtop 2s ease 1s forwards;
-}
-.border-left:before {
-    content: '';
-    @include father(3vw,0vh ,281vh,247vw );
-    background-color:rgb(176,105,22);
-        @keyframes appendleft {
-        to{
-            height: (74vh/1334*100);
-        }
-    }
-    animation: appendleft 1s ease  forwards;
-}
-.border-right:after {
-    content: '';
-    @include father(3vw, 0vh,281vh,477vw );
-    background-color:rgb(176,105,22);
-        @keyframes appendright {
-        to{
-             height: (74vh/1334*100);
-        }
-    }
-    animation: appendright 1s ease 3s forwards;
+.android-introduce{
+    text-align: center;
+    font-size: (27vw/750*100);
+    color: rgb(255, 255, 255);
+    margin-top: (79vh/1334*100);
 }
 
-.border-bottom:after {
-    content: '';
-    @include father(0vw, 3vw,353vh,247vw );
-    background-color:rgb(176,105,22);
-        @keyframes appendbottom {
-        to{
-              width: (229vw/750*100);
-        }
-    }
-    animation: appendbottom 2s ease 1s forwards;
-}
-.center-words{
-    @include father(345vw,136vh,372vh , 205vw);
-}
+
+
+
+
+
+
+
 .center-words-inner{
     @include sprite($android-center-word,$android-center-word-height);
 }

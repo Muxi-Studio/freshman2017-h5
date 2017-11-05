@@ -1,13 +1,6 @@
 <template>
   <div class="web-page-all">
-        <div class="turn_back">
-        <div class="turn_back_triangle">
-          <div class="turn_back_triangle_inner"></div>
-        </div>
-        <div class="turn_back_word">
-          返回星球
-        </div>
-      </div>
+    <turn-back></turn-back>
        <div class="border">
                 <div class="border-left"></div>
                 <div class="border-bottom"></div>
@@ -21,7 +14,10 @@
         来感受
       </div>
        <div class="center-words">
-                <div class="center-words-inner"></div>
+            界面的缔造者<br>
+            产品的后备军<br>
+            展现网站特效<br>
+            构建数据信息  
        </div>
        <div class="center-white-light">
          <div class="center-white-light-inner"></div>
@@ -66,6 +62,7 @@
 </template>
 
 <script>
+import turn_back from './turn-back.vue'
 export default {
   data() {
     return {};
@@ -74,6 +71,9 @@ export default {
     addgreen: function() {
       this.$emit("toblue");
     }
+  },
+  components:{
+    'turn-back':turn_back
   }
 };
 </script>
@@ -106,41 +106,21 @@ export default {
     "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
     SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
-.turn_back {
-  @include father(187vw,
-    30vh,
-    52vh,
-    41vw);
-  color: rgb(230, 230, 230);
-}
-.turn_back_triangle {
-  float: left;
-  width: (45vw/750*100);
-  height: (31vh/1334*100);
-}
-.turn_back_triangle_inner {
-  @include sprite($product-triangle,$product-triangle-height);
-}
-.turn_back_word {
-  font-weight: bolder;
-  font-size: (26vw/750*100);
-  @include pos(0vh,63vw);
-  line-height: 125%;
-  letter-spacing: (3vw/750*100);
-}
+
 .title {
-  @include father(430vw,90vh,141vh,164vw);
+  @include father(430vw,90vh,162vh,164vw);
 }
 .title-inner {
   @include sprite($web-title,$web-title-height);
   background-repeat: no-repeat;
 }
 .feeling-word {
-  @include pos(308vh,297vw);
+  @include pos(308vh,285vw);
   color: rgb(255, 255, 255);
-  font-size: (42vw/750*100);
+  font-size: (45vw/750*100);
   line-height: 100%;
   letter-spacing: (7vw/750*100);
+  
 }
 .border-top:before {
   content: "";
@@ -187,11 +167,14 @@ export default {
   animation: appendbottom 2s ease 1s forwards;
 }
 .center-words {
-  @include father(183vw,157vh ,375vh , 292vw);
+  text-align: center;
+  padding-top: (410vh/1334*100);
+  font-size: (25vw/750*100);
+  line-height: (36vh/1334*100);
+  color: rgb(255, 255, 255);
+  letter-spacing: (8vw/750*100);
 }
-.center-words-inner {
-  @include sprite($web-center-word,$web-center-word-height);
-}
+
 .center-white-light{
   @include father(198vw,124vh ,553vh ,289vw );
     animation: change-light 2s ease-in 0.5s infinite; 
@@ -230,7 +213,7 @@ export default {
             transform: translateY(0vh/1334*100);
         }
     }
-  @include father(371vw,429vh ,707vh ,212vw);
+  @include father(403vw,475vh ,707vh ,212vw);
 }
 .center-sprite-inner{
   @include sprite($web-center-sprite,$web-center-sprite-height);

@@ -111,6 +111,9 @@ export default {
 .question_word1{
   opacity: 0;
   animation: creat 1s ease forwards;
+  -webkit-animation: creat 1s ease forwards;
+  -moz-animation: creat 1s ease forwards;
+  -o-animation: creat 1s ease forwards;
   @keyframes creat {
     100%{
       opacity: 1;
@@ -126,6 +129,9 @@ export default {
 .question_left_ring{
   opacity: 0;
   animation: creat 1s ease 1s forwards;
+  -webkit-animation: creat 1s ease 1s forwards;
+  -moz-animation: creat 1s ease 1s forwards;
+  -o-animation: creat 1s ease 1s forwards;
   @include father(167vw,162vh ,354vh,96vw );
 }
 .question_left_ring_inner{
@@ -140,12 +146,24 @@ export default {
   font-weight: bolder;
   opacity: 0;
   animation: creat 1s ease 1s forwards;
+  -webkit-animation:  creat 1s ease 1s forwards;
+  -o-animation:  creat 1s ease 1s forwards;
+  -moz-animation:  creat 1s ease 1s forwards;
   @keyframes creat {
     100%{
       opacity: 1;
     }
   }
-   
+  @-webkit-keyframes creat{
+    100%{
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes creat {
+    100%{
+      opacity: 1;
+    }
+  }
 }
 i{
  margin-left: 2em;
@@ -159,14 +177,23 @@ i{
 .grid1{
   opacity: 0;
   animation: creat 1s ease 1.4s forwards;
+  -webkit-animation:  creat 1s ease 1.4s forwards;
+  -o-animation:  creat 1s ease 1.4s forwards;
+  -moz-animation:  creat 1s ease 1.4s forwards;
 }
 .grid2{
   opacity: 0;
   animation: creat 1s ease 1.8s forwards;
+  -webkit-animation: creat 1s ease 1.8s forwards;
+  -o-animation:  creat 1s ease 1.8s forwards;
+  -moz-animation:  creat 1s ease 1.8s forwards;
 }
 .grid3{
   opacity: 0;
   animation: creat 1s ease 2.3s forwards;
+  -webkit-animation: creat 1s ease 2.3s forwards;
+  -moz-animation:  creat 1s ease 2.3s forwards;
+  -o-animation:  creat 1s ease 2.3s forwards;
 }
 .grid1,.grid2,.grid3{
   line-height: 250%;
@@ -182,6 +209,9 @@ i{
 form{
   opacity: 0;
   animation: creat 1s ease 3.3s forwards;
+  -webkit-animation:  creat 1s ease 3.3s forwards;
+  -o-animation:  creat 1s ease 3.3s forwards;
+  -moz-animation:  creat 1s ease 3.3s forwards;
   @keyframes creat {
     100%{
       opacity: 1;
@@ -211,6 +241,9 @@ textarea{
 .question_right_ring{
   opacity: 0;
   animation: creat 1s ease 9s forwards;
+  -webkit-animation:  creat 1s ease 9s forwards;
+   -moz-animation:  creat 1s ease 9s forwards;
+   -o-animation:  creat 1s ease 9s forwards;
   @include father(71vw,75vh , 932vh,628vw )
 }
 .question_right_ring_inner{
@@ -219,6 +252,9 @@ textarea{
 .question_button{
   opacity: 0;
   animation: creat 1s ease 11s forwards;
+  -webkit-animation: creat 1s ease 11s forwards;
+  -moz-animation:  creat 1s ease 11s forwards;
+  -o-animation:  creat 1s ease 11s forwards;
   display: inline-block;
   position: absolute;
   top: (1092vh/1334*100);
