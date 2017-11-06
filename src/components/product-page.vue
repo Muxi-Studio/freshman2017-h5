@@ -206,7 +206,6 @@ padding-top: 0.6em ;
     height: 70%;
 }
 .bottom-word2{
-  
     @include father(11vw,218vh ,998vh ,137vw );
     opacity: 0;
     @include animsecond(hidd);
@@ -215,7 +214,7 @@ padding-top: 0.6em ;
     @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
 }
 .bottom-word3{
-     @include animfirst(out);
+    @include animfirst(out);
     @include father(22vw,152vh ,1005vh ,210vw );
 }
 .bottom-word3-inner{
@@ -258,7 +257,7 @@ padding-top: 0.6em ;
 .bottom-word8{
      opacity: 0;
      @include father(11vw,218vh ,1055vh ,675vw );
-      @include animsecond(hidd);
+     @include animsecond(hidd);
 }
 .bottom-word8-inner{
       @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
