@@ -93,6 +93,29 @@ export default {
   top: ($top/1334*100);
   left: ($left/750*100);
 }
+@mixin anim($function,$staytime,$way,$time,$end){
+  animation: $function $staytime $way $time $end;
+  -webkit-animation:  $function $staytime $way $time $end;
+  -o-animation:  $function $staytime $way  $time $end;
+  -moz-animation:  $function $staytime $way $time $end;
+}
+@keyframes shake {
+   50%{
+     transform: translateX(2.5vw) translateY(2.5vh);
+   }
+    100%{
+       transform: translateX(0vw) translateY(0vh);
+    }
+
+}
+@-webkit-keyframes shake {
+    50%{
+        transform: translateX(2.5vw) translateY(2.5vh);
+   }
+    100%{
+       transform: translateX(0vw) translateY(0vh);
+    }
+}
 .web-page-all {
   width: 100%;
   min-height: 100%;
@@ -131,7 +154,12 @@ export default {
       width: (229vw/750*100);
     }
   }
-  animation: appendtop 2s ease 1s forwards;
+  @-webkit-keyframes appendtop {
+    to {
+      width: (229vw/750*100);
+    }
+  }
+  @include anim(appendtop, 2s ,ease,1s,forwards )
 }
 .border-left:before {
   content: "";
@@ -142,7 +170,12 @@ export default {
       height: (74vh/1334*100);
     }
   }
-  animation: appendleft 1s ease forwards;
+  @-webkit-keyframes appendleft {
+    to {
+      height: (74vh/1334*100);
+    }
+  }
+   @include anim(appendleft, 1s ,ease,0s,forwards );
 }
 .border-right:after {
   content: "";
@@ -153,7 +186,13 @@ export default {
       height: (74vh/1334*100);
     }
   }
-  animation: appendright 1s ease 3s forwards;
+  @-webkit-keyframes appendright {
+    to {
+      height: (74vh/1334*100);
+    }
+  }
+   @include anim(appendright, 2s ,ease,3s,forwards );
+  
 }
 .border-bottom:after {
   content: "";
@@ -164,7 +203,13 @@ export default {
       width: (229vw/750*100);
     }
   }
-  animation: appendbottom 2s ease 1s forwards;
+  @-webkit-keyframes appendbottom {
+    to {
+      width: (229vw/750*100);
+    }
+  }
+    @include anim(appendbottom, 2s ,ease,1s,forwards );
+ 
 }
 .center-words {
   text-align: center;
@@ -176,9 +221,15 @@ export default {
 }
 
 .center-white-light{
-  @include father(198vw,124vh ,553vh ,289vw );
-    animation: change-light 2s ease-in 0.5s infinite; 
+   @include father(198vw,124vh ,553vh ,289vw );
+   @include anim(change-light, 2s ,ease-in,0.5s,infinite );
     @keyframes change-light {
+        to{
+            opacity: 0;
+            transform: translateY(-10vh/1334*100);
+        }
+    }
+    @-webkit-keyframes change-light {
         to{
             opacity: 0;
             transform: translateY(-10vh/1334*100);
@@ -190,8 +241,16 @@ export default {
 }
 .center-word-p{
   @include father(62vw,68vh ,636vh ,360vw );
-  animation: change-word-p 2s ease-in  infinite; 
+  @include anim(change-word-p ,2s ,ease-in,0s,infinite );
   @keyframes change-word-p {
+    50%{
+      transform: translateY(-10vh/1334*100);
+    }
+     to{
+          transform: translateY(0vh/1334*100);
+        }
+  }
+   @-webkit-keyframes change-word-p {
     50%{
       transform: translateY(-10vh/1334*100);
     }
@@ -204,8 +263,16 @@ export default {
   @include sprite($web-center-word-p,$web-center-word-p-height);
 }
 .center-sprite{
-  animation: change-sprite 2s ease-in infinite; 
+   @include anim(change-sprite ,2s ,ease-in,0s,infinite );
     @keyframes change-sprite {
+        50%{
+            transform: translateY(20vh/1334*100);
+        }
+         to{
+            transform: translateY(0vh/1334*100);
+        }
+    }
+    @-webkit-keyframes change-sprite {
         50%{
             transform: translateY(20vh/1334*100);
         }
@@ -219,8 +286,19 @@ export default {
   @include sprite($web-center-sprite,$web-center-sprite-height);
 }
 .bottom-left-word1{
-    animation: change-bottom-words 2s ease-in 1s infinite; 
+   @include anim(change-bottom-words ,2s ,ease-in,1s,infinite );
+  
     @keyframes change-bottom-words {
+        50%{
+               opacity: 0;
+            transform: translateY(-20vh/1334*100);
+        }
+         to{
+         
+            transform: translateY(0vh/1334*100);
+        }
+    }
+     @-webkit-keyframes change-bottom-words {
         50%{
                opacity: 0;
             transform: translateY(-20vh/1334*100);
@@ -237,7 +315,7 @@ export default {
   @include sprite($web-bottom-left-word1,$web-bottom-left-word1-height);
 }
 .bottom-left-word2{
- animation: change-bottom-words 2s ease-in infinite; 
+ @include anim(change-bottom-words ,2s ,ease-in,0s,infinite );
  width:(6vw/750*100);
  height:(72vh/1334*100);
 }
@@ -254,7 +332,7 @@ export default {
   @include pos(927vh,557vw);
 }
 .bottom-left-word3{
-  animation: change-bottom-words 2s ease-in 1s infinite; 
+  @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include father(137vw,357vh ,896vh ,218vw);
 }
 .bottom-left-word3-inner{
@@ -262,14 +340,14 @@ export default {
   height: 80%;
 }
 .bottom-left-word4{
-  animation: change-bottom-words 2s ease-in 1s infinite; 
+@include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include father(126vw,217vh,984vh,432vw);
 }
 .bottom-left-word4-inner{
   @include sprite($web-bottom-left-word4,$web-bottom-left-word4-height);
 }
 .bottom-left-word5{
-   animation: change-bottom-words 2s ease-in  infinite; 
+  @include anim(change-bottom-words ,2s ,ease-in,0s,infinite ); 
    width: (34vw/750*100);
    height: (400vh/1334*100);
 }
@@ -277,13 +355,13 @@ export default {
   @include sprite($web-bottom-left-word5,$web-bottom-left-word5-height);
 }
 .large-word1{
-   animation: change-bottom-words 2s ease-in 1s infinite; 
+  @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include pos(981vh,495vw);
   width:(6.3vw/750*100);
   height:(335.7vh/1334*100);
 }
 .bottom-left-word2-except{
- animation: change-bottom-words 2s ease-in  infinite; 
+@include anim(change-bottom-words ,2s ,ease-in,0s,infinite ); 
  width:(9vw/750*100);
  height:(108vh/1334*100);
 }
@@ -293,7 +371,7 @@ export default {
   @include pos(936vh,517vw);
 }
 .large-word3{
-   animation: change-bottom-words 2s ease-in 1s infinite; 
+ @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include pos(825vh,597vw);
 }
 .large-word4{
