@@ -99,23 +99,6 @@ export default {
   -o-animation:  $function $staytime $way  $time $end;
   -moz-animation:  $function $staytime $way $time $end;
 }
-@keyframes shake {
-   50%{
-     transform: translateX(2.5vw) translateY(2.5vh);
-   }
-    100%{
-       transform: translateX(0vw) translateY(0vh);
-    }
-
-}
-@-webkit-keyframes shake {
-    50%{
-        transform: translateX(2.5vw) translateY(2.5vh);
-   }
-    100%{
-       transform: translateX(0vw) translateY(0vh);
-    }
-}
 .web-page-all {
   width: 100%;
   min-height: 100%;

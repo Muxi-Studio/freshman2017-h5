@@ -45,7 +45,7 @@
           
           <div class="first-page_button">
            <a href="">
-            <div class="first-page_button_word">木犀.COM</div>
+            <div class="first-page_button_word">点击进入>>></div>
           </a>
        </div>
       </div>
@@ -78,6 +78,12 @@ export default {
     top: ($top/1334*100);
     left:($left/750*100) ; 
 }
+@mixin anim($function,$staytime,$way,$time,$end){
+  animation: $function $staytime $way $time $end;
+  -webkit-animation:  $function $staytime $way $time $end;
+  -o-animation:  $function $staytime $way  $time $end;
+  -moz-animation:  $function $staytime $way $time $end;
+}
 .first-page-all{
     width: 100%;
     min-height: 100%;
@@ -103,8 +109,13 @@ export default {
     @include sprite($first-page-top-right-star,$first-page-top-right-star-height);
 }
 .top-light{
-    animation: hide 1s ease 0.5s infinite; 
+    @include anim(hide ,1s ,ease, 0.5s ,infinite);
     @keyframes hide {
+        to{
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes hide {
         to{
             opacity: 0;
         }
@@ -122,10 +133,21 @@ export default {
 }
 .dynamic_word{
     @include father(124vw,64vh,363vh,276vw);
-    animation: move 1s ease infinite; 
+    @include anim(move, 1s, ease, 0s, infinite);
     @keyframes move {
-        to{
+        50%{
             transform: translateX(-10vw/750*100) translateY(-10vh/1334*100);
+        }
+        to{
+            transform: translateX(0vw) translateY(0vh);
+        }
+    }
+     @-webkit-keyframes move {
+        50%{
+            transform: translateX(-10vw/750*100) translateY(-10vh/1334*100);
+        }
+        to{
+            transform: translateX(0vw) translateY(0vh);
         }
     }
 }
@@ -153,6 +175,9 @@ table{
 }
 tr{
 transform: rotateZ(15deg);
+-webkit-transform: rotateZ(15deg);
+-moz-transform:  rotateZ(15deg);
+-o-transform:  rotateZ(15deg);
 }
 td{
     margin: 0;
@@ -160,8 +185,16 @@ td{
 }
 .up{
     transform: translateY(0vh/1334*100);
-    animation: up 1s ease infinite; 
+    -moz-transform: translateY(0vh/1334*100);
+    -o-transform: translateY(0vh/1334*100);
+    -webkit-transform: translateY(0vh/1334*100);
+    @include anim(up, 1s, ease ,0s ,infinite);
     @keyframes up {
+        to{
+            transform: translateY(-10vh/1334*100);
+        }
+    }
+     @-webkit-keyframes up {
         to{
             transform: translateY(-10vh/1334*100);
         }
@@ -169,8 +202,16 @@ td{
 }
 .down{
     transform:  translateY(-10vh/1334*100);
-    animation: down 1s ease  infinite; 
+    -moz-transform: translateY(-10vh/1334*100);
+    -o-transform: translateY(-10vh/1334*100);
+    -webkit-transform: translateY(-10vh/1334*100);
+     @include anim(down, 1s ,ease, 0s ,infinite);
     @keyframes down {
+        to{
+            transform: translateZ(0vh/1334*100) ;
+        }
+    }
+     @-webkit-keyframes down {
         to{
             transform: translateZ(0vh/1334*100) ;
         }
@@ -193,9 +234,10 @@ height: (38vh/1334*100);
   width: (310vw/750*100);
   border-radius: 5pt;
   border-style: solid;
-  border-width: (3vh/1334*100);
+  border-width: thin;
   border-color:#CC9900;
   border-radius: 5pt;
+  background: radial-gradient(rgba(253, 175, 39,0.5),rgba(253,175,39,0.2),rgba(253,175,39,0)); 
 }
 a:link{
   text-decoration: none;
@@ -204,12 +246,13 @@ a:link{
   width: 99%;
   font-size: (46vw/750*100);
   border-radius: 5pt;
-  color:#CC9900;
+  color:rgb(253,175,38);
+  text-shadow: 0 0 10px rgb(253,175,38);
   margin: (8vh/1334*100) 0;
   text-align: center;
   border-style: solid;
-  border-width: (3vh/1334*100);
-  border-color:#CC9900;
+  border-width: thin;
+  border-color:rgb(253,175,38);
 }
 
 </style>

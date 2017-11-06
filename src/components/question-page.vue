@@ -250,6 +250,7 @@ textarea{
   @include sprite($question-right-ring,$question-right-ring-height);
 }
 .question_button{
+  background: radial-gradient(rgba(253,175,39,0.2),rgba(253,175,39,0)); 
   opacity: 0;
   animation: creat 1s ease 11s forwards;
   -webkit-animation: creat 1s ease 11s forwards;
