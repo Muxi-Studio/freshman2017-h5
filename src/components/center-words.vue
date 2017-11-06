@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss">
 .center-word{
-     margin-top: (15vh/1334*100)!important;
+     margin-top: (15vh/1334*100);
     font-size: (44vw/750*100);
     color: rgb(255, 255, 255);
     text-align: center;
