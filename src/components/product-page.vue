@@ -178,7 +178,7 @@ i{
      @include sprite($product-center-diamond,$product-center-diamond-height );
 }
 .center-introduce-right-insert{
-@include father(85vw,168vh ,528vh ,470vw );
+@include father(85vw,168vh ,495vh ,470vw );
 text-align: center;
 background: radial-gradient(rgba(253, 175, 39,0.5),rgba(253,175,39,0.2),rgba(253,175,39,0)); /* 标准的语法 */
 color: rgb(253, 175, 39);
