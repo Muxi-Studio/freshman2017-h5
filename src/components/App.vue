@@ -26,7 +26,7 @@ import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-     show:"android-page"
+     show:"web-page"
     }
   },
     components: {
