@@ -136,6 +136,7 @@ $spritesheet: (686px, 1135px, '../sprite/sprite_inners.jpg', $spritesheet-sprite
   @include sprite-position($sprite,$img_height);
   @include sprite-width($sprite);
   @include sprite-height($sprite);
+  background-repeat: no-repeat;
 }
 
 // The `sprites` mixin generates identical output to the CSS template

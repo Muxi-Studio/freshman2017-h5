@@ -122,7 +122,7 @@ export default {
       opacity: 1;
     }
   }
-  @include father(686vw,231vh ,138vh ,58vw );
+  @include father(686vw,231vh ,138vh ,94vw );
   text-align: center;
   
 }

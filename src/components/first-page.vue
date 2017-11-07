@@ -125,7 +125,7 @@ export default {
     @include sprite($first-page-light,$first-page-light-height);
 }
 .top-sprite{
-    @include father(210vw,349vh,143vh,274vw)
+    @include father(210vw,349vh,143vh,278vw)
 }
 .top-sprite-inner{
     @include sprite($first-page-static-word,$first-page-static-word-height);

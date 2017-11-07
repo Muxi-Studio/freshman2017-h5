@@ -119,7 +119,9 @@ a:link{
   font-size: (20vw/750*100);
   border-radius: 5pt;
   color:#CC9900;
-  margin: (5vh/1334*100) 0;
+  position: relative;
+  top: (21vh/1334*100);
+  transform: translateY(-50%);
   text-align: center;
   border-style: solid;
   border-width: thin;

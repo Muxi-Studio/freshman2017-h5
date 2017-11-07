@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     Web:function(){
-       console.log('son-web')
+      console.log('son-web')
       this.$emit('web');
     },
     Android:function(){
@@ -322,16 +322,16 @@ export default {
 #panorama .face:nth-child(7) {
   // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
   background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
-  -webkit-transform: rotateY(90deg) translateZ(-155px);
-  -moz-transform: rotateY(90deg) translateZ(-155px);
-  transform: rotateY(90deg) translateZ(-155px);
+  -webkit-transform: rotateY(45deg) translateZ(-165px);
+  -moz-transform: rotateY(45deg) translateZ(-165px);
+  transform: rotateY(45deg) translateZ(-165px);
 }
 
 #panorama .face:nth-child(8) {
   // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
   background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
-  -webkit-transform: rotateY(-90deg) translateZ(-155px);
-  -moz-transform: rotateY(-90deg) translateZ(-155px);
+  -webkit-transform: rotateY(-270deg) translateZ(-155px);
+  -moz-transform: rotateY(-270deg) translateZ(-155px);
   transform: rotateY(-270deg) translateZ(-155px);
 }
 
