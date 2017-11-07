@@ -1,6 +1,6 @@
 <template>
     <div class="product-page-all">
-       <turn-back></turn-back>
+       <turn-back @spanorama="spanorama()"></turn-back>
         <div class="title">
           产品组
         </div>
@@ -67,8 +67,8 @@ export default {
         }
     },
     methods: {
-        addgreen: function() {
-            this.$emit('toblue');
+        spanorama: function() {
+            this.$emit('panorama');
         }
     },
      components: {
@@ -148,7 +148,6 @@ export default {
     background-position: center center;
     background-size: cover;
     background-image: url('../assets/asserts_common/detail-background.png');
-    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 
 
@@ -158,11 +157,11 @@ export default {
   font-size: (90vw/750*100);
   color: rgb(255, 255, 255);
 }
-.center-word{
-    margin-top: (15vh/1334*100)!important;
-}
+// .center-word{
+//     margin-top: (15vh/1334*100)!important;
+// }
 .center-introduce{
-    margin-top: (50vh/1334*100);
+    margin-top: (40vh/1334*100);
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: (28vw/750*100);
@@ -173,12 +172,18 @@ i{
 }
 .diamond{
     @include father(98vw,21vh ,400vh ,330vw );
+    position: relative;
+    top: (20vh/1334*100);
+    left: (668vw/1500*100);
 }
 .diamond-inner{
      @include sprite($product-center-diamond,$product-center-diamond-height );
 }
 .center-introduce-right-insert{
 @include father(85vw,168vh ,495vh ,470vw );
+position: relative;
+left: (926vw/1500*100);
+top: (-490vh/2668*100);
 text-align: center;
 background: radial-gradient(rgba(253, 175, 39,0.5),rgba(253,175,39,0.2),rgba(253,175,39,0)); /* 标准的语法 */
 color: rgb(253, 175, 39);

@@ -31,11 +31,11 @@
 
           </div>
         </div>
-        <div class="question_button">
-          <a href="">
+        <div class="question_button" @click="panorama()"> 
+          
             <div class="question_button_word">点击进入
               <span class="triangle">>>></span></div>
-          </a>
+          
         </div>
 
       </div>
@@ -55,6 +55,9 @@ export default {
       }
     },
     methods:{
+       panorama:function(){
+        this.$emit('panorama');
+       },
         type_text:function(){  
               let char=this.baseText[this.index];
               if(char!==','){
@@ -106,7 +109,7 @@ export default {
     background-position: center center;
     background-size: cover;
     background-image: url('../assets/asserts_common/question-background.png');
-    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
+   
 }
 .question_word1{
   opacity: 0;

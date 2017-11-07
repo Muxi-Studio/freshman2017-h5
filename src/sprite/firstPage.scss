@@ -409,4 +409,5 @@ $spritesheet: (683px, 9293px, '../sprite/first-page-sprite.jpg', $spritesheet-sp
     @include sprite-position($sprite,$img_height);
     @include sprite-width($sprite);
     @include sprite-height($sprite);
+    background-repeat: no-repeat;
   }

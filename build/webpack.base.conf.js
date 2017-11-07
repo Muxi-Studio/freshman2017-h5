@@ -47,7 +47,13 @@ module.exports = {
                         limit: 10000,
                         name: 'img/[name].[hash:7].[ext]'
                     }
-                }]
+                },{
+                    test: /\.(|gif|svg|woff|woff2|ttf|eot)$/,
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]?[hash]'
+                    }
+                  },]
     },
     resolve: {
         modules: ["node_modules", "spritesmith-generated"]

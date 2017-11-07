@@ -1,14 +1,14 @@
 <template>
   <div class="web-page-all">
-    <turn-back></turn-back>
+    <turn-back @spanorama="spanorama()"></turn-back>
        <div class="border">
                 <div class="border-left"></div>
                 <div class="border-bottom"></div>
                 <div class="border-top"></div>
                 <div class="border-right"></div>
        </div>
-       <div class="title">
-         <div class="title-inner"></div>
+       <div class="web-title">
+         <div class="web-title-inner"></div>
        </div>
       <div class="feeling-word">
         来感受
@@ -68,8 +68,8 @@ export default {
     return {};
   },
   methods: {
-    addgreen: function() {
-      this.$emit("toblue");
+    spanorama: function() {
+      this.$emit("panorama");
     }
   },
   components:{
@@ -107,16 +107,12 @@ export default {
   background-position: center center;
   background-size: cover;
   background-image: url("../assets/asserts_common/detail-background.png");
-  font-family: "DejaVu Serif", "Times New Roman", Times, "PingFang SC",
-    "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC",
-    "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
-    SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 
-.title {
-  @include father(430vw,90vh,162vh,164vw);
+.web-title {
+  @include father(430vw,90vh,150vh,210vw);
 }
-.title-inner {
+.web-title-inner {
   @include sprite($web-title,$web-title-height);
   background-repeat: no-repeat;
 }

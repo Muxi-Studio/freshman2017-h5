@@ -1,10 +1,5 @@
 <template>
   <div class='loading' :change='go'>
-      <!-- <div class="loading-star">
-          <div class="loading-star-inner">
-
-          </div>
-      </div> -->
       <div class="loading_sun_light">
           <div class="loading_sun_light_inner"></div>
       </div>
@@ -37,7 +32,7 @@ export default {
         go(){
             setInterval(()=>{
                  this.$emit('firstPage');
-            },3000);
+            },6000);
         }
     },
     
@@ -66,7 +61,7 @@ export default {
      @include sprite($sunlighe,$sunlighe-height);
  }
  .loading_sun{
-     @include father(53vw, 26vh, 178vh,519vw );
+     @include father(53vw, 26vh, 178vh,525vw );
  }
  .loading_sun_inner{
      @include sprite($only-sun,$only-sun-height);
@@ -85,7 +80,6 @@ export default {
     background-position: center ;
     background-size: cover;
     background-image:url('../assets/asserts_common/loading-background.png'); 
-    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .loading_wave{
     position: absolute;

@@ -1,14 +1,14 @@
 <template>
   <div class="app-all">
-    <android-page v-if="show==='android-page'"></android-page>
-    <web-page v-if="show==='web-page'"></web-page> 
-    <design-page v-if="show==='design-page'"></design-page> 
-     <product-page v-if="show==='product-page'"></product-page> 
-     <first-page v-if="show==='first-page'"></first-page> 
-     <!-- <test-panorama ></test-panorama> -->
-     <panorama v-if="show==='panorama'"></panorama> 
-     <loading v-if="show==='loading'"></loading>
-    <question v-if="show==='question'"></question>
+    <android-page v-if="show==='android-page'" @panorama='panorama()'></android-page>
+    <web-page v-if="show==='web-page'" @panorama='panorama()'></web-page> 
+    <design-page v-if="show==='design-page'" @panorama='panorama()'></design-page> 
+     <product-page v-if="show==='product-page'" @panorama='panorama()'></product-page> 
+     <first-page v-if="show==='first-page'" @question="questionpage()"></first-page> 
+     <test-panorama v-if="show==='parnorama-page'" @web="webpage()"  @design="designpage()" @product="productpage()" @android="androidpage()" ></test-panorama>
+     <loading v-if="show==='loading'" @firstPage="firstpage()"></loading>
+    <question v-if="show==='question-page'" @panorama="panorama()"></question>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 loop='true' src="//music.163.com/outchain/player?type=2&id=33579211&auto=1&height=66"></iframe>
   </div>
 </template>
 
@@ -20,20 +20,18 @@ import webPage from './web-page.vue'
 import designPage from './design-page.vue'
 import loading from './loading.vue'
 import question from './question-page.vue'
-import panorama from './panorama.vue'
 import testPanorama from './text-panorama.vue'
 import firstPage from './first-page.vue'
 export default {
   data(){
     return {
-     show:"question"
+     show:"loading"
     }
   },
     components: {
      'loading':loading,
      'first-page':firstPage,
      'question':question,
-     'panorama':panorama,
      'product-page':productPage,
      'design-page':designPage,
      'web-page':webPage,
@@ -41,26 +39,27 @@ export default {
      'test-panorama':testPanorama, 
     },
     methods: {
-      firstPage:function(){
+      firstpage:function(){
         this.show='first-page';
       },
-      questionPage:function(){
-        this.show='question';
+      questionpage:function(){
+        this.show='question-page';
       },
       panorama:function(){
-        this.show='panorama';
+        console.log('faga')
+        this.show='parnorama-page';
       },
-      productPage:function(){
+      productpage:function(){
         this.show='product-page';
           
       },
-      designPage:function(){
+      designpage:function(){
         this.show='design-page';
       },
-      webPage:function(){
+      webpage:function(){
         this.show='web-page';
       },
-      androidPage:function(){
+      androidpage:function(){
         this.show='android-page';
       }
     }
@@ -79,5 +78,10 @@ html,body{
 
 .app-all{
   height: 100vh;
+  font-family: zhang;
+}
+@font-face {
+  font-family: zhang;
+  src: url('./zhangfont.ttf');
 }
 </style>

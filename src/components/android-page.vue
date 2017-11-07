@@ -1,10 +1,10 @@
 <template>
 <div class="android-page-all">
-    <turn-back></turn-back>
+    <turn-back  @spanorama="spanorama()"></turn-back>
         <div class="title">
           安卓组
         </div>
-        <center-words class="center-words"></center-words>
+        <center-words></center-words>
           <div class="android-picture">
             <div class="android-picture-inner"></div>
           </div>
@@ -44,9 +44,8 @@ export default {
     return {};
   },
   methods: {
-    addred: function() {
-      console.log("change to green");
-      this.$emit("togreen");
+    spanorama: function() {
+      this.$emit("panorama");
     }
   },
   components: {
@@ -61,7 +60,7 @@ export default {
 @mixin father($width, $height, $top, $left) {
     width: ($width/750*100);
     height: ($height/1334*100);
-    position: absolute;
+    position: fixed;
     top: ($top/1334*100);
     left: ($left/750*100);
 }
@@ -144,7 +143,6 @@ export default {
     background-position: center center;
     background-size: cover;
     background-image: url('../assets/asserts_common/detail-background.png');
-    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 
 
@@ -154,19 +152,19 @@ export default {
     color: rgb(255, 255, 255);
     font-size: (80vw/750*100);
 }
-// .center-word{
-//    margin-top: (30vh/1334*100)!important;
-// }
 .android-introduce{
     text-align: center;
     font-size: (27vw/750*100);
     color: rgb(255, 255, 255);
-    margin-top: (79vh/1334*100);
+    margin-top: (-89vh/1334*100);
     line-height: (50vh/1334*100);
     letter-spacing: 0.3em;
 }
 .android-picture{
-  @include father(153vw,169vh ,372vh ,340vw);
+  @include father(153vw,169vh ,370vh ,340vw);
+  position: relative;
+  top: 0;
+  left: (340vw/750*100);
 }
 .android-picture-inner{
   @include sprite($android-center-picture,$android-center-picture-height);
@@ -182,7 +180,7 @@ export default {
 }
 .android-near-words{
   @include anim(out,2s ,0s ,ease );
-  @include father(272vw, 408vh,820vh ,253vw );
+  @include father(272vw, 408vh,820vh ,283vw );
 }
 .android-near-words-inner{
   @include sprite($android-near-words,$android-near-words-height);
@@ -190,68 +188,23 @@ export default {
 .android-away-words{
   opacity: 0;
   @include anim(outsecond,2s ,1s ,ease );
-  @include father(443vw,516vh , 647vh,170vw )
+  @include father(443vw,516vh , 647vh,200vw )
 }
 .android-away-words-inner{
   @include sprite($android-away-words,$android-away-words-height);
 }
 .android-center-sprite{
-  @include father(466vw,381vh , 917vh, 150vw);
+  @include father(466vw,381vh , 917vh, 180vw);
 }
 .android-center-sprite-inner{
   @include sprite($android-center-sprite,$android-center-sprite-height);
 }
 .android-left-picture{
    @include anim(shake,2s ,0s ,ease );
-  @include father(153vw,169vh ,802vh ,525vw);
+  @include father(153vw,169vh ,802vh ,515vw);
 }
 .android-left-picture-inner{
    @include sprite($android-center-picture,$android-center-picture-height);
    height: 50%;
 }
-
-// .center-words-inner{
-//     @include sprite($android-center-word,$android-center-word-height);
-// }
-// .center-light{
-//   animation: fade 2s ease  infinite;
-//   @include father(128vw,93vh ,533vh ,285vw );
-// }
-// .center-light-inner{
-//   @include sprite($android-center-light,$android-center-light-height);
-// }
-// .center_sprite{
-//     @include father(519vw,503vh,645vh,163vw );
-// }
-// .center_sprite_inner{
-//     @include sprite($android-center-sprite,$android-center-sprite-height);
-// }
-// .center-grid{
-    
-//   @include father(356vw,466vh ,598vh ,240vw );
-// }
-// .center-grid-inner{
-//   @include sprite($android-center-grid,$android-center-grid-height);
-// }
-// .left_yellow_triangle{
-//   animation: fade 2s ease  infinite;
-//   @keyframes fade {
-//     50%{
-//       opacity: 0;
-//     }
-//     100%{
-//       opacity: 0.5;
-//     }
-//   }
-//   @include father(117vw, 140vh, 902vh, 55vw);
-// }
-// .left_yellow_triangle_inner{
-//   @include sprite($android-left-yellow-triangle,$android-left-yellow-triangle-height);
-// }
-// .left_root{
-//   @include father(61vw,171vh , 968vh,80vw );
-// }
-// .left_root_inner{
-//   @include sprite($android-left-root,$android-left-root-height);
-// }
 </style>

@@ -30,23 +30,21 @@
                       <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
-                      <!-- <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td> -->
                   </tr>
                   <tr>
                     <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class="up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td>
                       <td class=" up"><div class="grid_out"> <div class="grid_inner"></div></div></td>
-                      <!-- <td class="down"><div class="grid_out"> <div class="grid_inner"></div></div></td> -->
                   </tr>
               </table>
             
           </div> 
           
-          <div class="first-page_button">
-           <a href="">
-            <div class="first-page_button_word">点击进入>>></div>
-          </a>
+          <div class="first-page_button" @click="question()">
+           <!-- <a href=""> -->
+            <div class="first-page_button_word" >点击进入>>></div>
+          <!-- </a> -->
        </div>
       </div>
 
@@ -60,7 +58,9 @@ export default {
 	}
 	  ,
     methods:{
-   
+     question:function(){
+         this.$emit('question');
+     }
     },
    mounted: function () {
    
@@ -92,7 +92,6 @@ export default {
     background-position: center ;
     background-size: cover;
     background-image:url('../assets/asserts_common/loading-background.png'); 
-    font-family: 'DejaVu Serif', 'Times New Roman', Times, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", serif;
 }
 .top-left-star{
     @include father(150vw,101vh,75vh,105vw);

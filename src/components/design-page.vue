@@ -1,10 +1,10 @@
 <template>
   <div class="design-page-all"> 
-    <turn-back></turn-back>
+    <turn-back @spanorama="spanorama()"></turn-back>
        <div class="title">
         设计组
        </div>
-      <center-words></center-words>
+      <center-words ></center-words>
       <div class="top-grid">
         <div class="top-grid-inner"></div>
       </div>
@@ -74,8 +74,8 @@ export default {
     return {};
   },
   methods: {
-    addblue: function() {
-      this.$emit("toword");
+    spanorama: function() {
+      this.$emit("panorama");
     }
   },
   components: {
@@ -108,20 +108,22 @@ export default {
   background-position: center center;
   background-size: cover;
   background-image: url("../assets/asserts_common/detail-background.png");
-  font-family: "DejaVu Serif", "Times New Roman", Times, "PingFang SC",
-    "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC",
-    "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
-    SimHei, "WenQuanYi Zen Hei Sharp", serif;
+}
+#center-word{
+  padding-top: (15vh/1334*100);
 }
 .title {
   padding-top: (154vh/1334*100);
   text-align: center;
   font-size: (90vw/750*100);
   color: rgb(255, 255, 255);
+  margin-left: -5vw;
 }
 .center-introuduce{
   color: rgb(255, 255, 255);
-  margin-top: (80vh/1334*100);
+  position: relative;
+  top: (-60vh/1334*100);
+  // margin-top: (80vh/1334*100);
   text-align: center;
   font-size: (32vw/750*100);
 
@@ -180,6 +182,9 @@ export default {
 }
 .top-grid{
   @include father(154vw,139vh ,384vh,325vw );
+  position: relative;
+  top: (-10vh/1334*100);
+  left: (330vw/750*100);
 }
 .top-grid-inner{
   @include grid($design-grid,$design-grid-height ,70% );

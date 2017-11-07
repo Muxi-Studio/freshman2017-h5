@@ -1,5 +1,5 @@
 <template>
-  <div class="turn_back">
+  <div class="turn_back" @click="back()">
         <div class="turn_back_triangle">
           <div class="turn_back_triangle_inner"></div>
         </div>
@@ -23,7 +23,11 @@ export default {
             },3000);
         }
     },
-    
+    methods:{
+        back:function(){
+            this.$emit('spanorama');
+        }
+    }
   }
 </script>
 
