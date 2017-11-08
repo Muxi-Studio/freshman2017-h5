@@ -108,7 +108,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url('../assets/asserts_common/question-background.png');
+    background-image: url('http://static.muxixyz.com/2017h5/question-background.png');
    
 }
 .question_word1{

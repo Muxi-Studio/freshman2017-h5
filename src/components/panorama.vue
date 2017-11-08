@@ -56,14 +56,14 @@ export default {
       o: 0,
       p: "",
       images: [
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png"
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg",
+        "https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg"
       ]
     };
   },
@@ -231,7 +231,7 @@ export default {
   height: 80%;
   background-position-x: 80%;
   background-position-y: 80%;
-  background-image: url("http://static.muxixyz.com/2017h5/panoramic-click-star.png");
+  background-image: url("../assets/first-page-assert/panoramic-click-star.png");
   background-size: 60%;
   background-repeat: no-repeat;
 }
@@ -240,7 +240,7 @@ export default {
   height: 80%;
   background-position-x: 80%;
   background-position-y: 80%;
-  background-image: url("http://static.muxixyz.com/2017h5/panoramic-product-star.png");
+  background-image: url("../assets/first-page-assert/panoramic-product-star.png");
   background-size: 60%;
   background-repeat: no-repeat;
 }
@@ -249,7 +249,7 @@ export default {
   height: 80%;
   background-position-x: 80%;
   background-position-y: 80%;
-  background-image: url("http://static.muxixyz.com/2017h5/panoramic-design-star.png");
+  background-image: url("../assets/first-page-assert/panoramic-design-star.png");
   background-size: 60%;
   background-repeat: no-repeat;
 }
@@ -258,7 +258,7 @@ export default {
   height: 80%;
   background-position-x: 80%;
   background-position-y: 80%;
-  background-image: url("http://static.muxixyz.com/2017h5/panoramic-android-star.png");
+  background-image: url("../assets/first-page-assert/panoramic-android-star.png");
   background-size: 60%;
   background-repeat: no-repeat;
 }
@@ -267,13 +267,13 @@ export default {
   height: 80%;
   background-position-x: 80%;
   background-position-y: 80%;
-  background-image: url("http://static.muxixyz.com/2017h5/panoramic-web-star.png");
+  background-image: url("../assets/first-page-assert/panoramic-web-star.png");
   background-size: 60%;
   background-repeat: no-repeat;
 }
 #panorama .face:nth-child(1) {
   // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateX(90deg) translateZ(-155px);
   -moz-transform: rotateX(90deg) translateZ(-155px);
   transform: rotateX(90deg) translateZ(-30vh);
@@ -281,7 +281,7 @@ export default {
 
 #panorama .face:nth-child(2) {
   //background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateX(-90deg) translateZ(-155px);
   -moz-transform: rotateX(-90deg) translateZ(-155px);
   transform: rotateX(-90deg) translateZ(-30vh);
@@ -289,7 +289,7 @@ export default {
 
 #panorama .face:nth-child(3) {
   // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateY(90deg) translateZ(-155px);
   -moz-transform: rotateY(90deg) translateZ(-155px);
   transform: rotateY(-10deg) translateZ(-155px);
@@ -297,7 +297,7 @@ export default {
 
 #panorama .face:nth-child(4) {
   // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateY(-90deg) translateZ(-155px);
   -moz-transform: rotateY(-90deg) translateZ(-155px);
   transform: rotateY(-90deg) translateZ(-155px);
@@ -305,7 +305,7 @@ export default {
 
 #panorama .face:nth-child(5) {
   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: translateZ(-155px);
   -moz-transform: translateZ(-155px);
   transform: translateZ(-170px) ;
@@ -313,7 +313,7 @@ export default {
 
 #panorama .face:nth-child(6) {
   // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateY(180deg) translateZ(-155px);
   -moz-transform: rotateY(180deg) translateZ(-155px);
   transform: rotateY(-180deg) translateZ(-155px);
@@ -321,7 +321,7 @@ export default {
 
 #panorama .face:nth-child(7) {
   // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateY(45deg) translateZ(-165px);
   -moz-transform: rotateY(45deg) translateZ(-165px);
   transform: rotateY(45deg) translateZ(-165px);
@@ -329,7 +329,7 @@ export default {
 
 #panorama .face:nth-child(8) {
   // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("https://wx4.sinaimg.cn/large/006P0MECly1fl8sktdketj31kw0sejwu.jpg");
   -webkit-transform: rotateY(-270deg) translateZ(-155px);
   -moz-transform: rotateY(-270deg) translateZ(-155px);
   transform: rotateY(-270deg) translateZ(-155px);

@@ -106,7 +106,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url("../assets/asserts_common/detail-background.png");
+  background-image: url("http://static.muxixyz.com/2017h5/detail-background.png");
 }
 
 .web-title {

@@ -91,7 +91,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
-    background-image:url('../assets/asserts_common/loading-background.png'); 
+    background-image:url('http://static.muxixyz.com/2017h5/loading-background.png'); 
 }
 .top-left-star{
     @include father(150vw,101vh,75vh,105vw);

@@ -2,11 +2,11 @@
   <div class='loading' :change='go'>
       <div class="loading_sun_light">
           <div class="loading_sun_light_inner"></div>
-      </div>
+            </div>
        <div class="loading_sun" > 
            <div class="loading_sun_inner"></div>
        </div>
-      
+     
        <div class="loading_sprite" >
            <div class="loading_sprite-inner">
 
@@ -29,11 +29,11 @@ export default {
       }
     },
     computed:{
-        go(){
-            setInterval(()=>{
-                 this.$emit('firstPage');
-            },6000);
-        }
+        // go(){
+        //     setInterval(()=>{
+        //          this.$emit('firstPage');
+        //     },6000);
+        // }
     },
     
   }
@@ -44,11 +44,16 @@ export default {
  @mixin father($width, $height, $top, $left) {
     width: ($width/750*100);
     height: ($height/1334*100);
-    position: absolute;
+    position: fixed;
     top: ($top/1334*100);
     left: ($left/750*100);
 }
+
  .loading_sun_light{
+    //  width: (273vw/750*100);
+    //  height: (237vh/1334*100);
+    //  padding-top: (65vh/1334*100);
+    //  padding-left: (422vw/750*100);
      @include father(273vw, 237vh,65vh ,422vw );
      animation: sun_light 1s ease  infinite;
      @keyframes sun_light {
@@ -60,8 +65,20 @@ export default {
  .loading_sun_light_inner{
      @include sprite($sunlighe,$sunlighe-height);
  }
+ @media screen and (min-width: 412px){
+    .loading_sun {
+          @include father(53vw, 26vh, 178vh,512vw );
+     }
+ }
+ @media screen and (max-width: 410px){
  .loading_sun{
      @include father(53vw, 26vh, 178vh,525vw );
+ }
+ }
+  @media screen and (min-width: 414px){
+ .loading_sun{
+     @include father(53vw, 26vh, 178vh,520vw );
+ }
  }
  .loading_sun_inner{
      @include sprite($only-sun,$only-sun-height);
@@ -79,7 +96,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
-    background-image:url('../assets/asserts_common/loading-background.png'); 
+    background-image:url('http://static.muxixyz.com/2017h5/loading-background.png'); 
 }
 .loading_wave{
     position: absolute;
