@@ -1,5 +1,6 @@
 <template>
   <div class="turn_back" @click="back()">
+        <!-- <iframe v-show="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86  src="./turnbacksong"></iframe> -->
         <div class="turn_back_triangle">
           <div class="turn_back_triangle_inner"></div>
         </div>
@@ -13,7 +14,7 @@
 export default {
     data(){
       return {
-         
+         music:false
       }
     },
     computed:{
@@ -25,6 +26,7 @@ export default {
     },
     methods:{
         back:function(){
+            this.music=true;
             this.$emit('spanorama');
         }
     }

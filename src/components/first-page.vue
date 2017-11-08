@@ -132,7 +132,7 @@ export default {
 }
 .dynamic_word{
     @include father(124vw,64vh,363vh,276vw);
-    @include anim(move, 1s, ease, 0s, infinite);
+    @include anim(move, 2s, ease, 0s, infinite);
     @keyframes move {
         50%{
             transform: translateX(-10vw/750*100) translateY(-10vh/1334*100);
@@ -187,15 +187,21 @@ td{
     -moz-transform: translateY(0vh/1334*100);
     -o-transform: translateY(0vh/1334*100);
     -webkit-transform: translateY(0vh/1334*100);
-    @include anim(up, 1s, ease ,0s ,infinite);
-    @keyframes up {
+    @include anim(firstup, 2s, ease ,0s ,infinite);
+    @keyframes firstup {
+        50%{
+             transform: translateY(-10vh/1334*100);
+        }
         to{
-            transform: translateY(-10vh/1334*100);
+            transform: translateY(0vh/1334*100);
         }
     }
-     @-webkit-keyframes up {
+     @-webkit-keyframes firstup {
+        50%{
+             transform: translateY(-10vh/1334*100);
+        }
         to{
-            transform: translateY(-10vh/1334*100);
+            transform: translateY(0vh/1334*100);
         }
     }
 }
@@ -204,15 +210,21 @@ td{
     -moz-transform: translateY(-10vh/1334*100);
     -o-transform: translateY(-10vh/1334*100);
     -webkit-transform: translateY(-10vh/1334*100);
-     @include anim(down, 1s ,ease, 0s ,infinite);
-    @keyframes down {
+    @include anim(firstdown, 2s ,ease, 0s ,infinite);
+    @keyframes firstdown {
+        50%{
+             transform:  translateY(0vh/1334*100);
+        }
         to{
-            transform: translateZ(0vh/1334*100) ;
+              transform:  translateY(-10vh/1334*100);
         }
     }
-     @-webkit-keyframes down {
+     @-webkit-keyframes firstdown {
+         50%{
+             transform:  translateY(0vh/1334*100);
+        }
         to{
-            transform: translateZ(0vh/1334*100) ;
+              transform:  translateY(-10vh/1334*100);
         }
     }
 }
