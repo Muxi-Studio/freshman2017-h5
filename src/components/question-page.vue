@@ -12,10 +12,10 @@
         </div>
         <div class="question_grid_all">
           <div class="grid1">
-            查成绩算学分<i></i>学而选课<i></i>问答机器人
+            查成绩算学分<strong></strong>学而选课<strong></strong>问答机器人
           </div>
           <div class="grid2">
-            一卡通<i></i><i></i>查电费
+            一卡通<strong></strong><strong></strong>查电费
           </div>
           <div class="grid3">
             SO EASY
@@ -50,7 +50,7 @@ export default {
           speed:100,
           index:0,
           text_pos:0,
-          baseText:',你好先锋军 #,如何成为一个有创造力的产品经理,变身前端高手,作为靠谱的后端工程师提高稳定数据与信息,用Java打造完美的手机端应用, ,# 木犀团队,向你发出邀请,快来实现你的互联网技术梦和产品梦！',
+          baseText:',你好先锋军 #,如何成为一个有创造力的产品经理,变身前端高手,作为靠谱的后端工程师提供稳定数据,用Java打造完美的手机端应用, ,# 木犀团队,向你发出邀请,快来实现你的互联网技术梦和产品梦！',
           text:''  
       }
     },
@@ -108,7 +108,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url('http://static.muxixyz.com/2017h5/question-background.png');
+    background-image: url('http://static.muxixyz.com/2017h5/detail-background.png');
    
 }
 .question_word1{
@@ -168,7 +168,7 @@ export default {
     }
   }
 }
-i{
+strong{
  margin-left: 2em;
 }
 .question_grid_all{
@@ -230,8 +230,8 @@ textarea{
     resize: none;
     border-style: none;
     text-align:left;
-    line-height: (1.26vh/47.06*100);
-    height: (355vh/1337*100);
+    line-height: (1.5vh/47.06*100);
+    height: (425vh/1337*100);
     // padding-top:  (1.16vh/47.06*100);
     background:transparent;
     opacity: 1;
@@ -239,6 +239,7 @@ textarea{
     transition: 1s cubic-bezier(.3,0,.3,1.6);
     font-size: 1em;
     font-weight: bold;
+    
 }
 
 .question_right_ring{
@@ -261,7 +262,7 @@ textarea{
   -o-animation:  creat 1s ease 11s forwards;
   display: inline-block;
   position: absolute;
-  top: (1092vh/1334*100);
+  top: (1200vh/1334*100);
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5pt;

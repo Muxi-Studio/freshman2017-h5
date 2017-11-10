@@ -48,7 +48,7 @@ export default {
     left: ($left/750*100);
 }
 .turn_back {
-    @include father(187vw,
+    @include father(190vw,
     30vh,
     52vh,
     41vw);

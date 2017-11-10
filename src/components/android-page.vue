@@ -1,7 +1,7 @@
 <template>
 <div class="android-page-all">
     <turn-back  @spanorama="spanorama()"></turn-back>
-        <div class="title">
+        <div class="android-title">
           安卓组
         </div>
         <center-words></center-words>
@@ -76,49 +76,49 @@ export default {
   -o-animation:  $function $staytime $way  $time infinite;
   -moz-animation:  $function $staytime $way $time infinite;
 }
-@keyframes out {
+@keyframes android-out {
    50%{
-       opacity: 0;
+      
       transform:  translateY(-1.5vh);
    }
     100%{
-    
+    //  opacity: 0;
       transform: translateY(0vh);
     }
 
 }
-@-webkit-keyframes out {
-    50%{
-       opacity: 0;
-       transform:  translateY(-1.5vh);
-        
+@-webkit-keyframes android-out {
+    50%{   
+       transform:  translateY(-1.5vh);      
    }
     100%{
+      // opacity: 0;
       transform: translateY(0vh);
     }
 }
-@keyframes outsecond {
+@keyframes android-outsecond {
    50%{
       opacity: 1;
       transform:  translateY(-1.5vh);
    }
     100%{
     
-      transform: translateY(0vh);
+     transform: translateY(0vh);
     }
 
 }
-@-webkit-keyframes outsecond {
+@-webkit-keyframes android-outsecond {
     50%{
-       opacity: 1;
+        opacity: 1;
        transform:  translateY(-1.5vh);
         
    }
     100%{
+     
       transform: translateY(0vh);
     }
 }
-@keyframes shake {
+@keyframes android-shake {
    50%{
      transform: translateY(-1.5vh);
    }
@@ -127,7 +127,7 @@ export default {
     }
 
 }
-@-webkit-keyframes shake {
+@-webkit-keyframes android-shake {
     50%{
         transform: translateY(-1.5vh);
    }
@@ -146,7 +146,7 @@ export default {
 }
 
 
-.title{
+.android-title{
     text-align: center;
     padding-top: (142vh/1334*100);
     color: rgb(255, 255, 255);
@@ -172,14 +172,14 @@ export default {
 }
 
 .android-center-picture{
-  @include anim(shake,2s ,0s ,ease );
+  @include anim(android-shake,2s ,1s ,ease );
   @include father(153vw,180vh ,640vh ,310vw);
 }
 .android-center-picture-inner{
    @include sprite($android-center-picture,$android-center-picture-height);
 }
 .android-near-words{
-  @include anim(out,2s ,0s ,ease );
+  @include anim(android-out,2s ,0s ,ease );
   @include father(272vw, 408vh,820vh ,283vw );
 }
 .android-near-words-inner{
@@ -187,7 +187,7 @@ export default {
 }
 .android-away-words{
   opacity: 0;
-  @include anim(outsecond,2s ,1s ,ease );
+  @include anim(android-outsecond,2s ,0s ,ease );
   @include father(443vw,516vh , 647vh,200vw )
 }
 .android-away-words-inner{
@@ -200,7 +200,7 @@ export default {
   @include sprite($android-center-sprite,$android-center-sprite-height);
 }
 .android-left-picture{
-   @include anim(shake,2s ,0s ,ease );
+   @include anim(android-shake,2s ,0s ,ease );
   @include father(153vw,169vh ,802vh ,515vw);
 }
 .android-left-picture-inner{

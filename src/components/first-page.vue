@@ -91,7 +91,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
-    background-image:url('http://static.muxixyz.com/2017h5/loading-background.png'); 
+    background-image:url('http://static.muxixyz.com/2017h5/detail-background.png'); 
 }
 .top-left-star{
     @include father(150vw,101vh,75vh,105vw);
@@ -154,7 +154,7 @@ export default {
     @include sprite($first-page-dynamic-word,$first-page-dynamic-word-height);
 }
 .center_sprite{
-    @include father(683vw,687vh ,397vh,50vw)
+    @include father(683vw,687vh ,397vh,100vw)
 }
 .center_sprite_inner{
     @include sprite($first-page-center,$first-page-center-height);
@@ -169,7 +169,7 @@ export default {
 table{
     position: absolute;
     top: (796vh/1334*100);
-    left: (45vw/750*100);
+    left: (95vw/750*100);
    
 }
 tr{

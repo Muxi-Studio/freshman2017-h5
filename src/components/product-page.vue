@@ -1,14 +1,14 @@
 <template>
     <div class="product-page-all">
        <turn-back @spanorama="spanorama()"></turn-back>
-        <div class="title">
+        <div class="product-title">
           产品组
         </div>
             <center-words></center-words>
-            <div class="diamond">
-                <div class="diamond-inner"></div>
+            <div class="product-diamond">
+                <div class="product-diamond-inner"></div>
             </div>
-            <div class="center-introduce">
+            <div class="product-center-introduce">
                 产品的引领者 团队的粘合剂<br>
                 <i></i>不断迸发的产品灵感<br>
                 <i></i>技术与人文紧密接轨<br>
@@ -17,43 +17,43 @@
                 最终实现产品运营 步步迭代<br>
             </div>
            <!-- continue -->
-            <div class="center-introduce-right-insert">
+            <div class="product-center-introduce-right-insert">
               
 
                 来<br>
                 感<br>
                 受<br>
             </div>
-            <div class="center_sprite">
-                <div class="center_sprite_inner"></div>
+            <div class="product-center_sprite">
+                <div class="product-center_sprite_inner"></div>
             </div>
             
-            <div class="bottom-word1">
-                <div class="bottom-word1-inner"></div>
+            <div class="product-bottom-word1">
+                <div class="product-bottom-word1-inner"></div>
             </div>
-            <div class="bottom-word2">
-                <div class="bottom-word2-inner"></div>
+            <div class="product-bottom-word2">
+                <div class="product-bottom-word2-inner"></div>
             </div>
-            <div class="bottom-word3">
-                <div class="bottom-word3-inner"></div>
+            <div class="product-bottom-word3">
+                <div class="product-bottom-word3-inner"></div>
             </div>
-            <div class="bottom-word4">
-                <div class="bottom-word4-inner"></div>
+            <div class="product-bottom-word4">
+                <div class="product-bottom-word4-inner"></div>
             </div>
-            <div class="bottom-word5">
-                <div class="bottom-word5-inner"></div>
+            <div class="product-bottom-word5">
+                <div class="product-bottom-word5-inner"></div>
             </div>
-            <div class="bottom-word6">
-                <div class="bottom-word6-inner"></div>
+            <div class="product-bottom-word6">
+                <div class="product-bottom-word6-inner"></div>
             </div>
-            <div class="bottom-word7">
-               <div class="bottom-word7-inner"></div>
+            <div class="product-bottom-word7">
+               <div class="product-bottom-word7-inner"></div>
             </div>
-            <div class="bottom-word8">
-                <div class="bottom-word8-inner"></div>
+            <div class="product-bottom-word8">
+                <div class="product-bottom-word8-inner"></div>
             </div>
-            <div class="bottom-word9">
-               <div class="bottom-word9-inner">  </div>
+            <div class="product-bottom-word9">
+               <div class="product-bottom-word9-inner">  </div>
             </div>
         </div>
 </template>
@@ -151,7 +151,7 @@ export default {
 }
 
 
-.title {
+.product-title {
   padding-top: (136vh/1334*100);
   text-align: center;
   font-size: (90vw/750*100);
@@ -160,7 +160,7 @@ export default {
 // .center-word{
 //     margin-top: (15vh/1334*100)!important;
 // }
-.center-introduce{
+.product-center-introduce{
     margin-top: (40vh/1334*100);
     text-align: center;
     color: rgb(255, 255, 255);
@@ -170,16 +170,16 @@ export default {
 i{
     margin-left: -3.2em;
 }
-.diamond{
+.product-diamond{
     @include father(98vw,21vh ,400vh ,330vw );
     position: relative;
     top: (20vh/1334*100);
     left: (668vw/1500*100);
 }
-.diamond-inner{
+.product-diamond-inner{
      @include sprite($product-center-diamond,$product-center-diamond-height );
 }
-.center-introduce-right-insert{
+.product-center-introduce-right-insert{
 @include father(85vw,168vh ,495vh ,470vw );
 position: relative;
 left: (926vw/1500*100);
@@ -194,84 +194,84 @@ border-width: (2vw/750*100);
 border-color: rgb(255, 255, 255);
 padding-top: 0.6em ;
 }
-.center_sprite{
+.product-center_sprite{
     @include father(662vw,505vh,745vh,105vw )
 }
-.center_sprite_inner{
+.product-center_sprite_inner{
     @include sprite($product-center-sprite,$product-center-sprite-height);
 }
 
-.bottom-word1{
+.product-bottom-word1{
     @include father(11vw,218vh ,960vh ,89vw);
     @include animfirst(out);
 
 }
-.bottom-word1-inner{
+.product-bottom-word1-inner{
     @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
     height: 70%;
 }
-.bottom-word2{
+.product-bottom-word2{
     @include father(11vw,218vh ,998vh ,137vw );
     opacity: 0;
     @include animsecond(hidd);
 }
-.bottom-word2-inner{
+.product-bottom-word2-inner{
     @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
 }
-.bottom-word3{
+.product-bottom-word3{
     @include animfirst(out);
     @include father(22vw,152vh ,1005vh ,210vw );
 }
-.bottom-word3-inner{
+.product-bottom-word3-inner{
     @include sprite($product-bottom-word-short,$product-bottom-word-short-height);
 }
-.bottom-word4{
+.product-bottom-word4{
     opacity: 0;
     @include father(22vw,152vh ,1057vh ,423vw );
      @include animsecond(hidd);
 }
-.bottom-word4-inner{
+.product-bottom-word4-inner{
     @include sprite($product-bottom-word-short,$product-bottom-word-short-height);
     height: 40%;
 }
-.bottom-word5{
+.product-bottom-word5{
      @include animfirst(out);
      @include father(22vw,152vh ,1063vh ,445vw );
 }
-.bottom-word5-inner{
+.product-bottom-word5-inner{
     @include sprite($product-bottom-word-short,$product-bottom-word-short-height);
 }
-.bottom-word6{
+.product-bottom-word6{
     opacity: 0;
     @include father(11vw,218vh ,1069vh ,481vw );
      @include animsecond(hidd);
 }
-.bottom-word6-inner{
+.product-bottom-word6-inner{
     @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
     height: 50%;
 }
-.bottom-word7{
+.product-bottom-word7{
      @include animfirst(out);
      @include father(22vw,152vh ,1069vh ,521vw );
     
 }
-.bottom-word7-inner{
+.product-bottom-word7-inner{
      @include sprite($product-bottom-word-short,$product-bottom-word-short-height);
 }
 
-.bottom-word8{
+.product-bottom-word8{
      opacity: 0;
      @include father(11vw,218vh ,1055vh ,675vw );
      @include animsecond(hidd);
 }
-.bottom-word8-inner{
+.product-bottom-word8-inner{
       @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
       height: 70%;
 }
-.bottom-word9{
+.product-bottom-word9{
      @include father(11vw,218vh ,1048vh ,692vw );
 }
-.bottom-word9-inner{
+.product-bottom-word9-inner{
      @include animfirst(out);
       @include sprite($product-bottom-word-large,$product-bottom-word-large-height);
       height: 60%;

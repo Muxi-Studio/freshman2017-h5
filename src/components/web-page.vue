@@ -1,62 +1,62 @@
 <template>
   <div class="web-page-all">
     <turn-back @spanorama="spanorama()"></turn-back>
-       <div class="border">
-                <div class="border-left"></div>
-                <div class="border-bottom"></div>
-                <div class="border-top"></div>
-                <div class="border-right"></div>
+       <div class="web-border">
+                <div class="web-border-left"></div>
+                <div class="web-border-bottom"></div>
+                <div class="web-border-top"></div>
+                <div class="web-border-right"></div>
        </div>
        <div class="web-title">
          <div class="web-title-inner"></div>
        </div>
-      <div class="feeling-word">
+      <div class="web-feeling-word">
         来感受
       </div>
-       <div class="center-words">
+       <div class="web-center-words">
             界面的缔造者<br>
             产品的后备军<br>
             展现网站特效<br>
             构建数据信息  
        </div>
-       <div class="center-white-light">
-         <div class="center-white-light-inner"></div>
+       <div class="web-center-white-light">
+         <div class="web-center-white-light-inner"></div>
        </div>
-       <div class="center-word-p">
-         <div class="center-word-p-inner"></div>
+       <div class="web-center-word-p">
+         <div class="web-center-word-p-inner"></div>
        </div>
-       <div class="center-sprite">
-         <div class="center-sprite-inner"></div>
+       <div class="web-center-sprite">
+         <div class="web-center-sprite-inner"></div>
        </div>
-       <div class="bottom-left-word1">
-         <div class="bottom-left-word1-inner"></div>
+       <div class="web-bottom-left-word1">
+         <div class="web-bottom-left-word1-inner"></div>
        </div>
-       <div class="bottom-left-word2 short-word1">
-         <div class="bottom-left-word2-inner"></div>
+       <div class="web-bottom-left-word2 web-short-word1">
+         <div class="web-bottom-left-word2-inner"></div>
        </div>
-       <div class="bottom-left-word3">
-         <div class="bottom-left-word3-inner"></div>
+       <div class="web-bottom-left-word3">
+         <div class="web-bottom-left-word3-inner"></div>
        </div>
-       <div class="bottom-left-word2-except short-word2">
-         <div class="bottom-left-word2-inner"></div>
+       <div class="web-bottom-left-word2-except web-short-word2">
+         <div class="web-bottom-left-word2-inner"></div>
        </div>
-       <div class="bottom-left-word4">
-         <div class="bottom-left-word4-inner"></div>
+       <div class="web-bottom-left-word4">
+         <div class="web-bottom-left-word4-inner"></div>
        </div>
-       <div class="bottom-left-word5 large-word1">
-          <div class="bottom-left-word5-inner"></div>
+       <div class="web-bottom-left-word5 web-large-word1">
+          <div class="web-bottom-left-word5-inner"></div>
        </div>
-            <div class="bottom-left-word5 large-word2">
-          <div class="bottom-left-word5-inner"></div>
+            <div class="web-bottom-left-word5 web-large-word2">
+          <div class="web-bottom-left-word5-inner"></div>
        </div>
-         <div class="bottom-left-word2 short-word3">
-         <div class="bottom-left-word2-inner"></div>
+         <div class="web-bottom-left-word2 web-short-word3">
+         <div class="web-bottom-left-word2-inner"></div>
        </div>
-          <div class="bottom-left-word5 large-word3">
-          <div class="bottom-left-word5-inner"></div>
+          <div class="web-bottom-left-word5 web-large-word3">
+          <div class="web-bottom-left-word5-inner"></div>
        </div>
-          <div class="bottom-left-word5 large-word4">
-          <div class="bottom-left-word5-inner"></div>
+          <div class="web-bottom-left-word5 web-large-word4">
+          <div class="web-bottom-left-word5-inner"></div>
        </div>
   </div>
 </template>
@@ -116,7 +116,7 @@ export default {
   @include sprite($web-title,$web-title-height);
   background-repeat: no-repeat;
 }
-.feeling-word {
+.web-feeling-word {
   @include pos(308vh,285vw);
   color: rgb(255, 255, 255);
   font-size: (45vw/750*100);
@@ -124,7 +124,7 @@ export default {
   letter-spacing: (7vw/750*100);
   
 }
-.border-top:before {
+.web-border-top:before {
   content: "";
   @include father(0vw, 3vw, 292vh,249vw );
   background-color: rgb(176, 105, 22);
@@ -140,7 +140,7 @@ export default {
   }
   @include anim(appendtop, 2s ,ease,1s,forwards )
 }
-.border-left:before {
+.web-border-left:before {
   content: "";
   @include father(3vw,0vh ,292vh,247vw );
   background-color: rgb(176, 105, 22);
@@ -156,7 +156,7 @@ export default {
   }
    @include anim(appendleft, 1s ,ease,0s,forwards );
 }
-.border-right:after {
+.web-border-right:after {
   content: "";
   @include father(3vw, 0vh,292vh,477vw );
   background-color: rgb(176, 105, 22);
@@ -173,7 +173,7 @@ export default {
    @include anim(appendright, 2s ,ease,3s,forwards );
   
 }
-.border-bottom:after {
+.web-border-bottom:after {
   content: "";
   @include father(0vw, 3vw,364vh,247vw );
   background-color: rgb(176, 105, 22);
@@ -190,7 +190,7 @@ export default {
     @include anim(appendbottom, 2s ,ease,1s,forwards );
  
 }
-.center-words {
+.web-center-words {
   text-align: center;
   padding-top: (410vh/1334*100);
   font-size: (25vw/750*100);
@@ -199,7 +199,7 @@ export default {
   letter-spacing: (8vw/750*100);
 }
 
-.center-white-light{
+.web-center-white-light{
    @include father(198vw,124vh ,553vh ,289vw );
    @include anim(change-light, 2s ,ease-in,0.5s,infinite );
     @keyframes change-light {
@@ -215,10 +215,10 @@ export default {
         }
     }
 }
-.center-white-light-inner{
+.web-center-white-light-inner{
   @include sprite($web-center-white-light,$web-center-white-light-height);
 }
-.center-word-p{
+.web-center-word-p{
   @include father(62vw,68vh ,636vh ,360vw );
   @include anim(change-word-p ,2s ,ease-in,0s,infinite );
   @keyframes change-word-p {
@@ -238,122 +238,145 @@ export default {
         }
   }
 }
-.center-word-p-inner{
+.web-center-word-p-inner{
   @include sprite($web-center-word-p,$web-center-word-p-height);
 }
-.center-sprite{
+.web-center-sprite{
    @include anim(change-sprite ,2s ,ease-in,0s,infinite );
     @keyframes change-sprite {
         50%{
             transform: translateY(20vh/1334*100);
         }
          to{
+           
             transform: translateY(0vh/1334*100);
         }
     }
-    @-webkit-keyframes change-sprite {
+@-webkit-keyframes change-sprite {
         50%{
             transform: translateY(20vh/1334*100);
         }
          to{
+           
             transform: translateY(0vh/1334*100);
         }
     }
   @include father(403vw,475vh ,690vh ,212vw);
 }
-.center-sprite-inner{
+.web-center-sprite-inner{
   @include sprite($web-center-sprite,$web-center-sprite-height);
 }
-.bottom-left-word1{
+.web-bottom-left-word1{
    @include anim(change-bottom-words ,2s ,ease-in,1s,infinite );
   
-    @keyframes change-bottom-words {
+@keyframes change-bottom-words {
         50%{
-               opacity: 0;
-            transform: translateY(-20vh/1334*100);
+          
+            transform: translateY(20vh/1334*100);
         }
          to{
-         
+          opacity: 0;
             transform: translateY(0vh/1334*100);
         }
     }
-     @-webkit-keyframes change-bottom-words {
+ @-webkit-keyframes change-bottom-words {
         50%{
-               opacity: 0;
-            transform: translateY(-20vh/1334*100);
+           opacity: 0;
+            transform: translateY(20vh/1334*100);
         }
          to{
-         
+          
             transform: translateY(0vh/1334*100);
         }
     }
   @include father(137vw, 357vh,779vh , 137vw);
 
 }
-.bottom-left-word1-inner{
+@keyframes change-bottom-words2 {
+        50%{
+           opacity: 0;
+           transform: translateY(20vh/1334*100);
+        }
+         to{
+         
+          transform: translateY(0vh/1334*100);
+        }
+    }
+     @-webkit-keyframes change-bottom-words2 {
+        50%{
+          
+            transform: translateY(20vh/1334*100);
+        }
+         to{
+           opacity: 0;
+            transform: translateY(0vh/1334*100);
+        }
+    }
+.web-bottom-left-word1-inner{
   @include sprite($web-bottom-left-word1,$web-bottom-left-word1-height);
 }
-.bottom-left-word2{
- @include anim(change-bottom-words ,2s ,ease-in,0s,infinite );
+.web-bottom-left-word2{
+ @include anim(change-bottom-words2 ,2s ,ease-in,1s,infinite );
  width:(6vw/750*100);
  height:(72vh/1334*100);
 }
-.bottom-left-word2-inner{
+.web-bottom-left-word2-inner{
   @include sprite($web-bottom-left-word2,$web-bottom-left-word2-height);
 }
-.short-word1{
-  @include pos(781vh,220vw);
+.web-short-word1{
+   @include anim(change-bottom-words2 ,2s ,ease-in,1s,infinite ); 
+   @include pos(781vh,220vw);
 }
-.short-word2{
-  @include pos(1172vh,346vw);
+.web-short-word2{
+  @include pos(1172vh,326vw);
 }
-.short-word3{
-  @include pos(927vh,557vw);
+.web-short-word3{
+  @include pos(927vh,507vw);
 }
-.bottom-left-word3{
+.web-bottom-left-word3{
   @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include father(137vw,357vh ,896vh ,218vw);
 }
-.bottom-left-word3-inner{
+.web-bottom-left-word3-inner{
   @include sprite($web-bottom-left-word1,$web-bottom-left-word1-height);
   height: 80%;
 }
-.bottom-left-word4{
+.web-bottom-left-word4{
 @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
-  @include father(126vw,217vh,984vh,432vw);
+  @include father(126vw,217vh,984vh,382vw);
 }
-.bottom-left-word4-inner{
+.web-bottom-left-word4-inner{
   @include sprite($web-bottom-left-word4,$web-bottom-left-word4-height);
 }
-.bottom-left-word5{
+.web-bottom-left-word5{
   @include anim(change-bottom-words ,2s ,ease-in,0s,infinite ); 
    width: (34vw/750*100);
    height: (400vh/1334*100);
 }
-.bottom-left-word5-inner{
+.web-bottom-left-word5-inner{
   @include sprite($web-bottom-left-word5,$web-bottom-left-word5-height);
 }
-.large-word1{
+.web-large-word1{
   @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
   @include pos(981vh,495vw);
   width:(6.3vw/750*100);
   height:(335.7vh/1334*100);
 }
-.bottom-left-word2-except{
-@include anim(change-bottom-words ,2s ,ease-in,0s,infinite ); 
+.web-bottom-left-word2-except{
+@include anim(change-bottom-words2 ,2s ,ease-in,1s,infinite ); 
  width:(9vw/750*100);
  height:(108vh/1334*100);
 }
-.large-word2{
+.web-large-word2{
   width:(5.6vw/750*100);
   height:(298.4vh/1334*100);
-  @include pos(936vh,517vw);
+  @include pos(936vh,479vw);
 }
-.large-word3{
+.web-large-word3{
  @include anim(change-bottom-words ,2s ,ease-in,1s,infinite ); 
-  @include pos(825vh,597vw);
+ @include pos(825vh,557vw);
 }
-.large-word4{
-  @include pos(700vh,620vw);
+.web-large-word4{
+  @include pos(700vh,580vw);
 }
 </style>

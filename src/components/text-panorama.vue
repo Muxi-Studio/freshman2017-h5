@@ -56,14 +56,14 @@ export default {
       o: 0,
       p: "",
       images: [
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png",
-        "http://static.muxixyz.com/2017h5/panorama.png"
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png",
+        "http://static.muxixyz.com/2017h5/panorama-background.png"
       ]
     };
   },
@@ -273,7 +273,7 @@ export default {
 }
 #panorama .face:nth-child(1) {
   // background-image: url("http://cs617727.vk.me/v617727366/942f/DqbS0IRIATA.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateX(90deg) translateZ(-155px);
   -moz-transform: rotateX(90deg) translateZ(-155px);
   transform: rotateX(90deg) translateZ(-30vh);
@@ -281,7 +281,7 @@ export default {
 
 #panorama .face:nth-child(2) {
   //background-image: url("http://cs617727.vk.me/v617727366/9436/Ig4ieHZXvNo.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateX(-90deg) translateZ(-155px);
   -moz-transform: rotateX(-90deg) translateZ(-155px);
   transform: rotateX(-90deg) translateZ(-30vh);
@@ -289,7 +289,7 @@ export default {
 
 #panorama .face:nth-child(3) {
   // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateY(90deg) translateZ(-155px);
   -moz-transform: rotateY(90deg) translateZ(-155px);
   transform: rotateY(-10deg) translateZ(-155px);
@@ -297,7 +297,7 @@ export default {
 
 #panorama .face:nth-child(4) {
   // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateY(-90deg) translateZ(-155px);
   -moz-transform: rotateY(-90deg) translateZ(-155px);
   transform: rotateY(-90deg) translateZ(-155px);
@@ -305,7 +305,7 @@ export default {
 
 #panorama .face:nth-child(5) {
   //background-image: url("http://cs617727.vk.me/v617727366/944b/-McVeNNxf-A.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: translateZ(-155px);
   -moz-transform: translateZ(-155px);
   transform: translateZ(-170px) ;
@@ -313,7 +313,7 @@ export default {
 
 #panorama .face:nth-child(6) {
   // background-image: url("http://cs617727.vk.me/v617727366/9452/w1bBTnHANig.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateY(180deg) translateZ(-155px);
   -moz-transform: rotateY(180deg) translateZ(-155px);
   transform: rotateY(-180deg) translateZ(-155px);
@@ -321,7 +321,7 @@ export default {
 
 #panorama .face:nth-child(7) {
   // background-image: url("http://cs617727.vk.me/v617727366/943d/g8xqn7S87kQ.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateY(45deg) translateZ(-165px);
   -moz-transform: rotateY(45deg) translateZ(-165px);
   transform: rotateY(45deg) translateZ(-165px);
@@ -329,7 +329,7 @@ export default {
 
 #panorama .face:nth-child(8) {
   // background-image: url("http://cs617727.vk.me/v617727366/9444/DfhvfFfTarY.jpg");
-  background-image: url("http://static.muxixyz.com/2017h5/panorama.png");
+  background-image: url("http://static.muxixyz.com/2017h5/panorama-background.png");
   -webkit-transform: rotateY(-270deg) translateZ(-155px);
   -moz-transform: rotateY(-270deg) translateZ(-155px);
   transform: rotateY(-270deg) translateZ(-155px);

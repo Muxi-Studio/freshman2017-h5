@@ -1,66 +1,66 @@
 <template>
   <div class="design-page-all"> 
     <turn-back @spanorama="spanorama()"></turn-back>
-       <div class="title">
+       <div class="design-title">
         设计组
        </div>
       <center-words ></center-words>
-      <div class="top-grid">
-        <div class="top-grid-inner"></div>
+      <div class="design-top-grid">
+        <div class="design-top-grid-inner"></div>
       </div>
-      <div class="center-introuduce">
+      <div class="design-center-introuduce">
         成为团队中的达芬奇<br>
-        我们熟悉PS&nbsp;&nbsp; AI软件<br>
+        轻松玩转PS&nbsp;&nbsp; AI软件<br>
         勾勒最惊艳视觉界面<br>
         成为天马星空的一员
       </div>
-       <div class="center-grid1">
-         <div class="center-grid1-inner"></div>
+       <div class="design-center-grid1">
+         <div class="design-center-grid1-inner"></div>
        </div>
-       <div class="center-grid2">
-         <div class="center-grid2-inner"></div>
+       <div class="design-center-grid2">
+         <div class="design-center-grid2-inner"></div>
        </div>
-       <div class="center-grid3">
-         <div class="center-grid3-inner"></div>
+       <div class="design-center-grid3">
+         <div class="design-center-grid3-inner"></div>
        </div>
-       <div class="center-grid4">
-         <div class="center-grid4-inner"></div>
+       <div class="design-center-grid4">
+         <div class="design-center-grid4-inner"></div>
        </div>
-       <div class="center-grid5">
-         <div class="center-grid5-inner"></div>
+       <div class="design-center-grid5">
+         <div class="design-center-grid5-inner"></div>
        </div>
-       <div class="center-grid6">
-         <div class="center-grid6-inner"></div>
+       <div class="design-center-grid6">
+         <div class="design-center-grid6-inner"></div>
        </div>
-       <div class="center-grid7">
-         <div class="center-grid7-inner"></div>
+       <div class="design-center-grid7">
+         <div class="design-center-grid7-inner"></div>
        </div>
-       <div class="center-sprite">
-         <div class="center-sprite-inner"></div>
+       <div class="design-center-sprite">
+         <div class="design-center-sprite-inner"></div>
        </div>
-       <div class="bottom-left-grid1">
-         <div class="bottom-left-grid1-inner"></div>
+       <div class="design-bottom-left-grid1">
+         <div class="design-bottom-left-grid1-inner"></div>
        </div>
-       <div class="bottom-left-grid2">
-         <div class="bottom-left-grid2-inner"></div>
+       <div class="design-bottom-left-grid2">
+         <div class="design-bottom-left-grid2-inner"></div>
        </div>
-        <div class="bottom-left-grid3">
-         <div class="bottom-left-grid3-inner"></div>
+        <div class="design-bottom-left-grid3">
+         <div class="design-bottom-left-grid3-inner"></div>
        </div>
-       <div class="bottom-left-grid4">
-         <div class="bottom-left-grid4-inner"></div>
+       <div class="design-bottom-left-grid4">
+         <div class="design-bottom-left-grid4-inner"></div>
        </div>
-        <div class="bottom-left-grid5">
-         <div class="bottom-left-grid5-inner"></div>
+        <div class="design-bottom-left-grid5">
+         <div class="design-bottom-left-grid5-inner"></div>
        </div>
-       <div class="bottom-left-grid6">
-         <div class="bottom-left-grid6-inner"></div>
+       <div class="design-bottom-left-grid6">
+         <div class="design-bottom-left-grid6-inner"></div>
        </div>
-        <div class="bottom-left-grid7">
-         <div class="bottom-left-grid7-inner"></div>
+        <div class="design-bottom-left-grid7">
+         <div class="design-bottom-left-grid7-inner"></div>
        </div>
-       <div class="bottom-left-grid8">
-         <div class="bottom-left-grid8-inner"></div>
+       <div class="design-bottom-left-grid8">
+         <div class="design-bottom-left-grid8-inner"></div>
        </div>
        
   </div>
@@ -109,17 +109,15 @@ export default {
   background-size: cover;
   background-image: url("http://static.muxixyz.com/2017h5/detail-background.png");
 }
-#center-word{
-  padding-top: (15vh/1334*100);
-}
-.title {
+
+.design-title {
   padding-top: (154vh/1334*100);
   text-align: center;
   font-size: (90vw/750*100);
   color: rgb(255, 255, 255);
   margin-left: -5vw;
 }
-.center-introuduce{
+.design-center-introuduce{
   color: rgb(255, 255, 255);
   position: relative;
   top: (-60vh/1334*100);
@@ -134,24 +132,24 @@ export default {
   -o-animation:  $function $staytime $way  $time infinite;
   -moz-animation:  $function $staytime $way $time infinite;
 }
-@keyframes shake {
+@keyframes design-shake {
    50%{
-     transform: translateX(2.5vw) translateY(2.5vh);
+     transform: translateX(1vw) translateY(1vh);
    }
     100%{
        transform: translateX(0vw) translateY(0vh);
     }
 
 }
-@-webkit-keyframes shake {
+@-webkit-keyframes design-shake {
     50%{
-        transform: translateX(2.5vw) translateY(2.5vh);
+        transform: translateX(1vw) translateY(1vh);
    }
     100%{
        transform: translateX(0vw) translateY(0vh);
     }
 }
-@keyframes downout {
+@keyframes design-downout {
    50%{
      opacity: 1;
     
@@ -162,7 +160,7 @@ export default {
     }
 
 }
-@-webkit-keyframes downout {
+@-webkit-keyframes design-downout {
    50%{
      opacity: 0;
    }
@@ -173,143 +171,161 @@ export default {
 }
 
 
-.center-sprite{
+.design-center-sprite{
   @include father(666vw,421vh , 807vh, 90vw);
-  @include anim(shake,2s,ease,0s);
+  
 }
-.center-sprite-inner{
+.design-center-sprite-inner{
+  @include anim(design-shake,2s, 0s ,ease );
   @include sprite($design-center-sprite,$design-center-sprite-height);
 }
-.top-grid{
+.design-top-grid{
   @include father(154vw,139vh ,384vh,325vw );
   position: relative;
   top: (-10vh/1334*100);
   left: (330vw/750*100);
 }
-.top-grid-inner{
+.design-top-grid-inner{
   @include grid($design-grid,$design-grid-height ,70% );
 }
 
-.center-grid1{
+.design-center-grid1{
   opacity: 1;
   @include father(154vw,139vh ,653vh,320vw );
-  @include anim(downout,2s,0s,ease);
+  @include anim(design-downout,2s,0s,ease);
 }
-.center-grid1-inner{
+.design-center-grid1-inner{
    @include grid($design-grid,$design-grid-height ,70% );
 }
-.center-grid2{
+.design-center-grid2{
   opacity: 0;
   @include father(154vw,139vh ,699vh,350vw );
-  @include anim(downout,2s,0.5s,ease);
+  @include anim(design-downout,2s,0.5s,ease);
 }
-.center-grid2-inner{
+.design-center-grid2-inner{
    @include grid($design-grid,$design-grid-height ,69% );
 }
-.center-grid3{
+.design-center-grid3{
   opacity: 0;
   @include father(154vw,139vh ,723vh,290vw );
-  @include anim(downout,2s,0.7s,ease);
+  @include anim(design-downout,2s,0.7s,ease);
 }
-.center-grid3-inner{
+.design-center-grid3-inner{
    @include grid($design-grid,$design-grid-height ,65% );
 }
-.center-grid4{
+.design-center-grid4{
   opacity: 0;
   @include father(154vw,139vh ,770vh,330vw );
-  @include anim(downout,2s,0.9s,ease);
+ 
 }
-.center-grid4-inner{
+.design-center-grid4-inner{
    @include grid($design-grid,$design-grid-height ,75% );
+    @include anim(design-downout,2s,0.9s,ease);
 }
 
-.center-grid5{
+.design-center-grid5{
   opacity: 0;
   @include father(154vw,139vh ,740vh,380vw );
-  @include anim(downout,2s,1.1s,ease);
+  
 }
-.center-grid5-inner{
+.design-center-grid5-inner{
    @include grid($design-grid,$design-grid-height ,69% );
+   @include anim(design-downout,2s,1.1s,ease);
 }
-.center-grid6{
+.design-center-grid6{
   opacity: 0;
   @include father(154vw,139vh ,750vh,450vw );
-  @include anim(downout,2s,1.3s,ease);
+ 
 }
-.center-grid6-inner{
+.design-center-grid6-inner{
    @include grid($design-grid,$design-grid-height ,75% );
+    @include anim(design-downout,2s,1.3s,ease);
 }
-.center-grid7{
+.design-center-grid7{
   opacity: 0;
   @include father(154vw,139vh ,800vh,422vw );
-  @include anim(downout,2s,1.5s,ease);
+ 
 }
-.center-grid7-inner{
+.design-center-grid7-inner{
    @include grid($design-grid,$design-grid-height ,68% );
+    @include anim(design-downout,2s,1.5s,ease);
 }
-.bottom-left-grid1{
-  opacity: 0;
+.design-bottom-left-grid1{
    @include father(154vw,139vh ,1044vh,126vw );
-   @include anim(downout,2s,2s,ease);
+ 
 }
-.bottom-left-grid1-inner{
-  @include grid($design-grid,$design-grid-height ,70% );
-}
-.bottom-left-grid2{
+.design-bottom-left-grid1-inner{
   opacity: 0;
+  @include grid($design-grid,$design-grid-height ,70% );
+  @include anim(design-downout,2s,2s,ease);
+}
+.design-bottom-left-grid2{
    @include father(154vw,139vh ,1079vh,244vw );
-    @include anim(downout,2s,2.2s,ease);
 }
-.bottom-left-grid2-inner{
+.design-bottom-left-grid2-inner{
+  opacity: 0;
   @include grid($design-grid,$design-grid-height ,90% );
+  @include anim(design-downout,2s,2.2s,ease);
 }
-.bottom-left-grid3{
-  opacity: 0;
+.design-bottom-left-grid3{
+ 
    @include father(154vw,139vh ,1176vh,308vw );
-    @include anim(downout,2s,2.4s,ease);
+    
 }
-.bottom-left-grid3-inner{
+.design-bottom-left-grid3-inner{
+   opacity: 0;
   @include grid($design-grid,$design-grid-height ,50% );
+  @include anim(design-downout,2s,2.4s,ease);
 }
-.bottom-left-grid4{
-  opacity: 0;
+.design-bottom-left-grid4{
+ 
    @include father(154vw,139vh ,1193vh,357vw );
-    @include anim(downout,2s,2.6s,ease);
+  
 }
-.bottom-left-grid4-inner{
+.design-bottom-left-grid4-inner{
+   opacity: 0;
   @include grid($design-grid,$design-grid-height ,100% );
+    @include anim(design-downout,2s,2.6s,ease);
 }
-.bottom-left-grid5{
-  opacity: 0;
+.design-bottom-left-grid5{
+  
    @include father(154vw,139vh ,1151vh,456vw );
-    @include anim(downout,2s,2.8s,ease);
+   
 }
-.bottom-left-grid5-inner{
-  @include grid($design-grid,$design-grid-height ,60% );
-}
-.bottom-left-grid6{
+.design-bottom-left-grid5-inner{
   opacity: 0;
+  @include grid($design-grid,$design-grid-height ,60% );
+   @include anim(design-downout,2s,2.8s,ease);
+}
+.design-bottom-left-grid6{
+
    @include father(154vw,139vh ,1230vh,493vw );
-    @include anim(downout,2s,3s,ease);
+   
 }
-.bottom-left-grid6-inner{
+.design-bottom-left-grid6-inner{
+    opacity: 0;
   @include grid($design-grid,$design-grid-height ,60% );
+   @include anim(design-downout,2s,3s,ease);
 }
-.bottom-left-grid7{
-  opacity: 0;
+.design-bottom-left-grid7{
+  
    @include father(154vw,139vh ,1113vh,553vw );
-    @include anim(downout,2s,2.4s,ease);
+  
 }
-.bottom-left-grid7-inner{
-  @include grid($design-grid,$design-grid-height ,70% );
-}
-.bottom-left-grid8{
+.design-bottom-left-grid7-inner{
   opacity: 0;
-   @include father(154vw,139vh ,1181vh,593vw );
-    @include anim(downout,2s,2.6s,ease);
-}
-.bottom-left-grid8-inner{
   @include grid($design-grid,$design-grid-height ,70% );
+    @include anim(design-downout,2s,2.4s,ease);
+}
+.design-bottom-left-grid8{
+  
+   @include father(154vw,139vh ,1181vh,593vw );
+  
+}
+.design-bottom-left-grid8-inner{
+  opacity: 0;
+  @include grid($design-grid,$design-grid-height ,70% );
+  @include anim(design-downout,2s,2.6s,ease);
 }
 
 </style>
